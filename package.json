@@ -1,0 +1,48 @@
+{
+  "name": "@billos/firefly-iii-typescript-sdk",
+  "version": "6.5.1",
+  "description": "TypeScript SDK for Firefly III, generated from its OpenAPI specification",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "generate": "openapi-ts",
+    "build": "tsc",
+    "prepublishOnly": "npm run generate && npm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billos/firefly-iii-typescript-sdk.git"
+  },
+  "keywords": [
+    "firefly-iii",
+    "typescript",
+    "sdk",
+    "openapi",
+    "finance"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billos/firefly-iii-typescript-sdk/issues"
+  },
+  "homepage": "https://github.com/Billos/firefly-iii-typescript-sdk#readme",
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.94.5",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@hey-api/client-axios": "^0.9.1"
+  }
+}
