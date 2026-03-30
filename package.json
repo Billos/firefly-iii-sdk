@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Billos/firefly-iii-typescript-sdk.git"
+    "url": "git+https://github.com/Billos/firefly-iii-sdk.git"
   },
   "keywords": [
     "firefly-iii",
@@ -35,9 +35,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Billos/firefly-iii-typescript-sdk/issues"
+    "url": "https://github.com/Billos/firefly-iii-sdk/issues"
   },
-  "homepage": "https://github.com/Billos/firefly-iii-typescript-sdk#readme",
+  "homepage": "https://github.com/Billos/firefly-iii-sdk#readme",
   "devDependencies": {
     "@hey-api/openapi-ts": "^0.94.5",
     "typescript": "^6.0.2"

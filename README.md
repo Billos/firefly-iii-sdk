@@ -1,18 +1,18 @@
-# firefly-iii-typescript-sdk
+# firefly-iii-sdk
 
 A TypeScript SDK for [Firefly III](https://www.firefly-iii.org/), automatically generated from the [official OpenAPI specification](https://github.com/firefly-iii/api-docs).
 
 ## Installation
 
 ```bash
-npm install firefly-iii-typescript-sdk @hey-api/client-axios axios
+npm install firefly-iii-sdk @hey-api/client-axios axios
 ```
 
 ## Usage
 
 ```typescript
 import { createClient } from "@hey-api/client-axios";
-import { AboutService } from "firefly-iii-typescript-sdk";
+import { AboutService } from "firefly-iii-sdk";
 
 const client = createClient({
   baseUrl: "https://your-firefly-instance/api/v1",
