@@ -1,8 +1,9 @@
-import { defineConfig } from "@hey-api/openapi-ts"
+import { defineConfig } from "@hey-api/openapi-ts";
 
 export default defineConfig({
-  input: "https://raw.githubusercontent.com/firefly-iii/api-docs/main/dist/firefly-iii-6.5.1-v1.yaml",
-  output: "./src/sdk/firefly",
+  input:
+    "https://raw.githubusercontent.com/firefly-iii/api-docs/main/dist/firefly-iii-6.5.1-v1.yaml",
+  output: "./src",
   plugins: [
     { enums: true, name: "@hey-api/typescript" },
     {
@@ -14,4 +15,4 @@ export default defineConfig({
       },
     },
   ],
-})
+});
