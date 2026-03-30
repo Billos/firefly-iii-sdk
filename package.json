@@ -1,6 +1,6 @@
 {
   "name": "@billos/firefly-iii-sdk",
-  "version": "6.5.1-sdk.4",
+  "version": "6.5.1-sdk.5",
   "description": "TypeScript SDK for Firefly III, generated from its OpenAPI specification",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
