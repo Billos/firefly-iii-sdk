@@ -5,7 +5,7 @@ A TypeScript SDK for [Firefly III](https://www.firefly-iii.org/), automatically 
 ## Installation
 
 ```bash
-npm install @billos/firefly-iii-sdk@6.5.1-sdk.5
+npm install @billos/firefly-iii-sdk@6.5.5-sdk.5
 ```
 
 ## Usage
