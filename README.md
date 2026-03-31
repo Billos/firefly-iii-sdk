@@ -5,13 +5,13 @@ A TypeScript SDK for [Firefly III](https://www.firefly-iii.org/), automatically 
 ## Installation
 
 ```bash
-npm install firefly-iii-sdk @hey-api/client-axios axios
+npm install @billos/firefly-iii-sdk@6.5.1-sdk.5
 ```
 
 ## Usage
 
 ```typescript
-import { createClient } from "@hey-api/client-axios";
+import { createClient } from "firefly-iii-sdk/client";
 import { AboutService } from "firefly-iii-sdk";
 
 const client = createClient({
