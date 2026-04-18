@@ -13,5 +13,9 @@ export default defineConfig({
         strategy: "byTags",
       },
     },
+    {
+      name: "@hey-api/client-fetch",
+      throwOnError: true,
+    },
   ],
 });

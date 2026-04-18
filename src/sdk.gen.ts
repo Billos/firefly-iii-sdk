@@ -22,7 +22,7 @@ export class AutocompleteService {
     /**
      * Returns all accounts of the user returned in a basic auto-complete array.
      */
-    public static getAccountsAc<ThrowOnError extends boolean = false>(options?: Options<GetAccountsAcData, ThrowOnError>) {
+    public static getAccountsAc<ThrowOnError extends boolean = true>(options?: Options<GetAccountsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetAccountsAcResponses, GetAccountsAcErrors, ThrowOnError>({
             querySerializer: { parameters: { types: { array: { explode: false } } } },
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
@@ -34,7 +34,7 @@ export class AutocompleteService {
     /**
      * Returns all bills of the user returned in a basic auto-complete array.
      */
-    public static getBillsAc<ThrowOnError extends boolean = false>(options?: Options<GetBillsAcData, ThrowOnError>) {
+    public static getBillsAc<ThrowOnError extends boolean = true>(options?: Options<GetBillsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetBillsAcResponses, GetBillsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/bills',
@@ -45,7 +45,7 @@ export class AutocompleteService {
     /**
      * Returns all budgets of the user returned in a basic auto-complete array.
      */
-    public static getBudgetsAc<ThrowOnError extends boolean = false>(options?: Options<GetBudgetsAcData, ThrowOnError>) {
+    public static getBudgetsAc<ThrowOnError extends boolean = true>(options?: Options<GetBudgetsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetBudgetsAcResponses, GetBudgetsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/budgets',
@@ -56,7 +56,7 @@ export class AutocompleteService {
     /**
      * Returns all categories of the user returned in a basic auto-complete array.
      */
-    public static getCategoriesAc<ThrowOnError extends boolean = false>(options?: Options<GetCategoriesAcData, ThrowOnError>) {
+    public static getCategoriesAc<ThrowOnError extends boolean = true>(options?: Options<GetCategoriesAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetCategoriesAcResponses, GetCategoriesAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/categories',
@@ -67,7 +67,7 @@ export class AutocompleteService {
     /**
      * Returns all currencies of the user returned in a basic auto-complete array.
      */
-    public static getCurrenciesAc<ThrowOnError extends boolean = false>(options?: Options<GetCurrenciesAcData, ThrowOnError>) {
+    public static getCurrenciesAc<ThrowOnError extends boolean = true>(options?: Options<GetCurrenciesAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetCurrenciesAcResponses, GetCurrenciesAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/currencies',
@@ -78,7 +78,7 @@ export class AutocompleteService {
     /**
      * Returns all currencies of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
      */
-    public static getCurrenciesCodeAc<ThrowOnError extends boolean = false>(options?: Options<GetCurrenciesCodeAcData, ThrowOnError>) {
+    public static getCurrenciesCodeAc<ThrowOnError extends boolean = true>(options?: Options<GetCurrenciesCodeAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetCurrenciesCodeAcResponses, GetCurrenciesCodeAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/currencies-with-code',
@@ -89,7 +89,7 @@ export class AutocompleteService {
     /**
      * Returns all object groups of the user returned in a basic auto-complete array.
      */
-    public static getObjectGroupsAc<ThrowOnError extends boolean = false>(options?: Options<GetObjectGroupsAcData, ThrowOnError>) {
+    public static getObjectGroupsAc<ThrowOnError extends boolean = true>(options?: Options<GetObjectGroupsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetObjectGroupsAcResponses, GetObjectGroupsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/object-groups',
@@ -100,7 +100,7 @@ export class AutocompleteService {
     /**
      * Returns all piggy banks of the user returned in a basic auto-complete array.
      */
-    public static getPiggiesAc<ThrowOnError extends boolean = false>(options?: Options<GetPiggiesAcData, ThrowOnError>) {
+    public static getPiggiesAc<ThrowOnError extends boolean = true>(options?: Options<GetPiggiesAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetPiggiesAcResponses, GetPiggiesAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/piggy-banks',
@@ -111,7 +111,7 @@ export class AutocompleteService {
     /**
      * Returns all piggy banks of the user returned in a basic auto-complete array.
      */
-    public static getPiggiesBalanceAc<ThrowOnError extends boolean = false>(options?: Options<GetPiggiesBalanceAcData, ThrowOnError>) {
+    public static getPiggiesBalanceAc<ThrowOnError extends boolean = true>(options?: Options<GetPiggiesBalanceAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetPiggiesBalanceAcResponses, GetPiggiesBalanceAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/piggy-banks-with-balance',
@@ -122,7 +122,7 @@ export class AutocompleteService {
     /**
      * Returns all recurring transactions of the user returned in a basic auto-complete array.
      */
-    public static getRecurringAc<ThrowOnError extends boolean = false>(options?: Options<GetRecurringAcData, ThrowOnError>) {
+    public static getRecurringAc<ThrowOnError extends boolean = true>(options?: Options<GetRecurringAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetRecurringAcResponses, GetRecurringAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/recurring',
@@ -133,7 +133,7 @@ export class AutocompleteService {
     /**
      * Returns all rule groups of the user returned in a basic auto-complete array.
      */
-    public static getRuleGroupsAc<ThrowOnError extends boolean = false>(options?: Options<GetRuleGroupsAcData, ThrowOnError>) {
+    public static getRuleGroupsAc<ThrowOnError extends boolean = true>(options?: Options<GetRuleGroupsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetRuleGroupsAcResponses, GetRuleGroupsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/rule-groups',
@@ -144,7 +144,7 @@ export class AutocompleteService {
     /**
      * Returns all rules of the user returned in a basic auto-complete array.
      */
-    public static getRulesAc<ThrowOnError extends boolean = false>(options?: Options<GetRulesAcData, ThrowOnError>) {
+    public static getRulesAc<ThrowOnError extends boolean = true>(options?: Options<GetRulesAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetRulesAcResponses, GetRulesAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/rules',
@@ -155,7 +155,7 @@ export class AutocompleteService {
     /**
      * Returns all subscriptions of the user returned in a basic auto-complete array.
      */
-    public static getSubscriptionsAc<ThrowOnError extends boolean = false>(options?: Options<GetSubscriptionsAcData, ThrowOnError>) {
+    public static getSubscriptionsAc<ThrowOnError extends boolean = true>(options?: Options<GetSubscriptionsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetSubscriptionsAcResponses, GetSubscriptionsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/subscriptions',
@@ -166,7 +166,7 @@ export class AutocompleteService {
     /**
      * Returns all tags of the user returned in a basic auto-complete array.
      */
-    public static getTagAc<ThrowOnError extends boolean = false>(options?: Options<GetTagAcData, ThrowOnError>) {
+    public static getTagAc<ThrowOnError extends boolean = true>(options?: Options<GetTagAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetTagAcResponses, GetTagAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/tags',
@@ -177,7 +177,7 @@ export class AutocompleteService {
     /**
      * Returns all transaction types returned in a basic auto-complete array. English only.
      */
-    public static getTransactionTypesAc<ThrowOnError extends boolean = false>(options?: Options<GetTransactionTypesAcData, ThrowOnError>) {
+    public static getTransactionTypesAc<ThrowOnError extends boolean = true>(options?: Options<GetTransactionTypesAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetTransactionTypesAcResponses, GetTransactionTypesAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/transaction-types',
@@ -188,7 +188,7 @@ export class AutocompleteService {
     /**
      * Returns all transaction descriptions of the user returned in a basic auto-complete array.
      */
-    public static getTransactionsAc<ThrowOnError extends boolean = false>(options?: Options<GetTransactionsAcData, ThrowOnError>) {
+    public static getTransactionsAc<ThrowOnError extends boolean = true>(options?: Options<GetTransactionsAcData, ThrowOnError>) {
         return (options?.client ?? client).get<GetTransactionsAcResponses, GetTransactionsAcErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/transactions',
@@ -199,7 +199,7 @@ export class AutocompleteService {
     /**
      * Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
      */
-    public static getTransactionsIdac<ThrowOnError extends boolean = false>(options?: Options<GetTransactionsIdacData, ThrowOnError>) {
+    public static getTransactionsIdac<ThrowOnError extends boolean = true>(options?: Options<GetTransactionsIdacData, ThrowOnError>) {
         return (options?.client ?? client).get<GetTransactionsIdacResponses, GetTransactionsIdacErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/autocomplete/transactions-with-id',
@@ -215,7 +215,7 @@ export class ChartsService {
      * This endpoint returns the data required to generate a chart with basic asset account balance information. This is used on the dashboard.
      *
      */
-    public static getChartAccountOverview<ThrowOnError extends boolean = false>(options: Options<GetChartAccountOverviewData, ThrowOnError>) {
+    public static getChartAccountOverview<ThrowOnError extends boolean = true>(options: Options<GetChartAccountOverviewData, ThrowOnError>) {
         return (options.client ?? client).get<GetChartAccountOverviewResponses, GetChartAccountOverviewErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/chart/account/overview',
@@ -229,7 +229,7 @@ export class ChartsService {
      * This endpoint returns the data required to generate a chart with balance information.
      *
      */
-    public static getChartBalance<ThrowOnError extends boolean = false>(options: Options<GetChartBalanceData, ThrowOnError>) {
+    public static getChartBalance<ThrowOnError extends boolean = true>(options: Options<GetChartBalanceData, ThrowOnError>) {
         return (options.client ?? client).get<GetChartBalanceResponses, GetChartBalanceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/chart/balance/balance',
@@ -243,7 +243,7 @@ export class ChartsService {
      * This endpoint returns the data required to generate a chart with basic budget information.
      *
      */
-    public static getChartBudgetOverview<ThrowOnError extends boolean = false>(options: Options<GetChartBudgetOverviewData, ThrowOnError>) {
+    public static getChartBudgetOverview<ThrowOnError extends boolean = true>(options: Options<GetChartBudgetOverviewData, ThrowOnError>) {
         return (options.client ?? client).get<GetChartBudgetOverviewResponses, GetChartBudgetOverviewErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/chart/budget/overview',
@@ -257,7 +257,7 @@ export class ChartsService {
      * This endpoint returns the data required to generate a chart with basic category information.
      *
      */
-    public static getChartCategoryOverview<ThrowOnError extends boolean = false>(options: Options<GetChartCategoryOverviewData, ThrowOnError>) {
+    public static getChartCategoryOverview<ThrowOnError extends boolean = true>(options: Options<GetChartCategoryOverviewData, ThrowOnError>) {
         return (options.client ?? client).get<GetChartCategoryOverviewResponses, GetChartCategoryOverviewErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/chart/category/overview',
@@ -273,7 +273,7 @@ export class DataService {
      * Allows you to update transactions in bulk.
      *
      */
-    public static bulkUpdateTransactions<ThrowOnError extends boolean = false>(options: Options<BulkUpdateTransactionsData, ThrowOnError>) {
+    public static bulkUpdateTransactions<ThrowOnError extends boolean = true>(options: Options<BulkUpdateTransactionsData, ThrowOnError>) {
         return (options.client ?? client).post<BulkUpdateTransactionsResponses, BulkUpdateTransactionsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/bulk/transactions',
@@ -288,7 +288,7 @@ export class DataService {
      * The demo user is incapable of using this endpoint.
      *
      */
-    public static destroyData<ThrowOnError extends boolean = false>(options: Options<DestroyDataData, ThrowOnError>) {
+    public static destroyData<ThrowOnError extends boolean = true>(options: Options<DestroyDataData, ThrowOnError>) {
         return (options.client ?? client).delete<DestroyDataResponses, DestroyDataErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/destroy',
@@ -302,7 +302,7 @@ export class DataService {
      * This endpoint allows you to export your accounts from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportAccounts<ThrowOnError extends boolean = false>(options?: Options<ExportAccountsData, ThrowOnError>) {
+    public static exportAccounts<ThrowOnError extends boolean = true>(options?: Options<ExportAccountsData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportAccountsResponses, ExportAccountsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/accounts',
@@ -316,7 +316,7 @@ export class DataService {
      * This endpoint allows you to export your bills from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportBills<ThrowOnError extends boolean = false>(options?: Options<ExportBillsData, ThrowOnError>) {
+    public static exportBills<ThrowOnError extends boolean = true>(options?: Options<ExportBillsData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportBillsResponses, ExportBillsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/bills',
@@ -330,7 +330,7 @@ export class DataService {
      * This endpoint allows you to export your budgets and associated budget data from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportBudgets<ThrowOnError extends boolean = false>(options?: Options<ExportBudgetsData, ThrowOnError>) {
+    public static exportBudgets<ThrowOnError extends boolean = true>(options?: Options<ExportBudgetsData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportBudgetsResponses, ExportBudgetsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/budgets',
@@ -344,7 +344,7 @@ export class DataService {
      * This endpoint allows you to export your categories from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportCategories<ThrowOnError extends boolean = false>(options?: Options<ExportCategoriesData, ThrowOnError>) {
+    public static exportCategories<ThrowOnError extends boolean = true>(options?: Options<ExportCategoriesData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportCategoriesResponses, ExportCategoriesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/categories',
@@ -358,7 +358,7 @@ export class DataService {
      * This endpoint allows you to export your piggy banks from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportPiggies<ThrowOnError extends boolean = false>(options?: Options<ExportPiggiesData, ThrowOnError>) {
+    public static exportPiggies<ThrowOnError extends boolean = true>(options?: Options<ExportPiggiesData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportPiggiesResponses, ExportPiggiesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/piggy-banks',
@@ -372,7 +372,7 @@ export class DataService {
      * This endpoint allows you to export your recurring transactions from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportRecurring<ThrowOnError extends boolean = false>(options?: Options<ExportRecurringData, ThrowOnError>) {
+    public static exportRecurring<ThrowOnError extends boolean = true>(options?: Options<ExportRecurringData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportRecurringResponses, ExportRecurringErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/recurring',
@@ -386,7 +386,7 @@ export class DataService {
      * This endpoint allows you to export your rules and rule groups from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportRules<ThrowOnError extends boolean = false>(options?: Options<ExportRulesData, ThrowOnError>) {
+    public static exportRules<ThrowOnError extends boolean = true>(options?: Options<ExportRulesData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportRulesResponses, ExportRulesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/rules',
@@ -400,7 +400,7 @@ export class DataService {
      * This endpoint allows you to export your tags from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportTags<ThrowOnError extends boolean = false>(options?: Options<ExportTagsData, ThrowOnError>) {
+    public static exportTags<ThrowOnError extends boolean = true>(options?: Options<ExportTagsData, ThrowOnError>) {
         return (options?.client ?? client).get<ExportTagsResponses, ExportTagsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/tags',
@@ -414,7 +414,7 @@ export class DataService {
      * This endpoint allows you to export transactions from Firefly III into a file. Currently supports CSV exports only.
      *
      */
-    public static exportTransactions<ThrowOnError extends boolean = false>(options: Options<ExportTransactionsData, ThrowOnError>) {
+    public static exportTransactions<ThrowOnError extends boolean = true>(options: Options<ExportTransactionsData, ThrowOnError>) {
         return (options.client ?? client).get<ExportTransactionsResponses, ExportTransactionsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/export/transactions',
@@ -429,7 +429,7 @@ export class DataService {
      * The demo user is incapable of using this endpoint.
      *
      */
-    public static purgeData<ThrowOnError extends boolean = false>(options?: Options<PurgeDataData, ThrowOnError>) {
+    public static purgeData<ThrowOnError extends boolean = true>(options?: Options<PurgeDataData, ThrowOnError>) {
         return (options?.client ?? client).delete<PurgeDataResponses, PurgeDataErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/data/purge',
@@ -445,7 +445,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by expense account.
      *
      */
-    public static insightExpenseExpense<ThrowOnError extends boolean = false>(options: Options<InsightExpenseExpenseData, ThrowOnError>) {
+    public static insightExpenseExpense<ThrowOnError extends boolean = true>(options: Options<InsightExpenseExpenseData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseExpenseResponses, InsightExpenseExpenseErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/expense',
@@ -459,7 +459,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by asset account.
      *
      */
-    public static insightExpenseAsset<ThrowOnError extends boolean = false>(options: Options<InsightExpenseAssetData, ThrowOnError>) {
+    public static insightExpenseAsset<ThrowOnError extends boolean = true>(options: Options<InsightExpenseAssetData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseAssetResponses, InsightExpenseAssetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/asset',
@@ -473,7 +473,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, grouped by revenue account.
      *
      */
-    public static insightIncomeRevenue<ThrowOnError extends boolean = false>(options: Options<InsightIncomeRevenueData, ThrowOnError>) {
+    public static insightIncomeRevenue<ThrowOnError extends boolean = true>(options: Options<InsightIncomeRevenueData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeRevenueResponses, InsightIncomeRevenueErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/revenue',
@@ -487,7 +487,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, grouped by asset account.
      *
      */
-    public static insightIncomeAsset<ThrowOnError extends boolean = false>(options: Options<InsightIncomeAssetData, ThrowOnError>) {
+    public static insightIncomeAsset<ThrowOnError extends boolean = true>(options: Options<InsightIncomeAssetData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeAssetResponses, InsightIncomeAssetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/asset',
@@ -501,7 +501,7 @@ export class InsightService {
      * This endpoint gives a summary of the transfers made by the user, grouped by asset account or lability.
      *
      */
-    public static insightTransfers<ThrowOnError extends boolean = false>(options: Options<InsightTransfersData, ThrowOnError>) {
+    public static insightTransfers<ThrowOnError extends boolean = true>(options: Options<InsightTransfersData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransfersResponses, InsightTransfersErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/asset',
@@ -515,7 +515,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by (any) bill.
      *
      */
-    public static insightExpenseBill<ThrowOnError extends boolean = false>(options: Options<InsightExpenseBillData, ThrowOnError>) {
+    public static insightExpenseBill<ThrowOnError extends boolean = true>(options: Options<InsightExpenseBillData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseBillResponses, InsightExpenseBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/bill',
@@ -529,7 +529,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, including only expenses with no bill.
      *
      */
-    public static insightExpenseNoBill<ThrowOnError extends boolean = false>(options: Options<InsightExpenseNoBillData, ThrowOnError>) {
+    public static insightExpenseNoBill<ThrowOnError extends boolean = true>(options: Options<InsightExpenseNoBillData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseNoBillResponses, InsightExpenseNoBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/no-bill',
@@ -543,7 +543,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by (any) budget.
      *
      */
-    public static insightExpenseBudget<ThrowOnError extends boolean = false>(options: Options<InsightExpenseBudgetData, ThrowOnError>) {
+    public static insightExpenseBudget<ThrowOnError extends boolean = true>(options: Options<InsightExpenseBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseBudgetResponses, InsightExpenseBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/budget',
@@ -557,7 +557,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, including only expenses with no budget.
      *
      */
-    public static insightExpenseNoBudget<ThrowOnError extends boolean = false>(options: Options<InsightExpenseNoBudgetData, ThrowOnError>) {
+    public static insightExpenseNoBudget<ThrowOnError extends boolean = true>(options: Options<InsightExpenseNoBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseNoBudgetResponses, InsightExpenseNoBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/no-budget',
@@ -571,7 +571,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by (any) category.
      *
      */
-    public static insightExpenseCategory<ThrowOnError extends boolean = false>(options: Options<InsightExpenseCategoryData, ThrowOnError>) {
+    public static insightExpenseCategory<ThrowOnError extends boolean = true>(options: Options<InsightExpenseCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseCategoryResponses, InsightExpenseCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/category',
@@ -585,7 +585,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, including only expenses with no category.
      *
      */
-    public static insightExpenseNoCategory<ThrowOnError extends boolean = false>(options: Options<InsightExpenseNoCategoryData, ThrowOnError>) {
+    public static insightExpenseNoCategory<ThrowOnError extends boolean = true>(options: Options<InsightExpenseNoCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseNoCategoryResponses, InsightExpenseNoCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/no-category',
@@ -599,7 +599,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, grouped by (any) category.
      *
      */
-    public static insightIncomeCategory<ThrowOnError extends boolean = false>(options: Options<InsightIncomeCategoryData, ThrowOnError>) {
+    public static insightIncomeCategory<ThrowOnError extends boolean = true>(options: Options<InsightIncomeCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeCategoryResponses, InsightIncomeCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/category',
@@ -613,7 +613,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, including only income with no category.
      *
      */
-    public static insightIncomeNoCategory<ThrowOnError extends boolean = false>(options: Options<InsightIncomeNoCategoryData, ThrowOnError>) {
+    public static insightIncomeNoCategory<ThrowOnError extends boolean = true>(options: Options<InsightIncomeNoCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeNoCategoryResponses, InsightIncomeNoCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/no-category',
@@ -627,7 +627,7 @@ export class InsightService {
      * This endpoint gives a summary of the transfers made by the user, grouped by (any) category.
      *
      */
-    public static insightTransferCategory<ThrowOnError extends boolean = false>(options: Options<InsightTransferCategoryData, ThrowOnError>) {
+    public static insightTransferCategory<ThrowOnError extends boolean = true>(options: Options<InsightTransferCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransferCategoryResponses, InsightTransferCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/category',
@@ -641,7 +641,7 @@ export class InsightService {
      * This endpoint gives a summary of the transfers made by the user, including only transfers with no category.
      *
      */
-    public static insightTransferNoCategory<ThrowOnError extends boolean = false>(options: Options<InsightTransferNoCategoryData, ThrowOnError>) {
+    public static insightTransferNoCategory<ThrowOnError extends boolean = true>(options: Options<InsightTransferNoCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransferNoCategoryResponses, InsightTransferNoCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/no-category',
@@ -655,7 +655,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, grouped by (any) tag.
      *
      */
-    public static insightExpenseTag<ThrowOnError extends boolean = false>(options: Options<InsightExpenseTagData, ThrowOnError>) {
+    public static insightExpenseTag<ThrowOnError extends boolean = true>(options: Options<InsightExpenseTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseTagResponses, InsightExpenseTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/tag',
@@ -669,7 +669,7 @@ export class InsightService {
      * This endpoint gives a summary of the expenses made by the user, including only expenses with no tag.
      *
      */
-    public static insightExpenseNoTag<ThrowOnError extends boolean = false>(options: Options<InsightExpenseNoTagData, ThrowOnError>) {
+    public static insightExpenseNoTag<ThrowOnError extends boolean = true>(options: Options<InsightExpenseNoTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseNoTagResponses, InsightExpenseNoTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/no-tag',
@@ -683,7 +683,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, grouped by (any) tag.
      *
      */
-    public static insightIncomeTag<ThrowOnError extends boolean = false>(options: Options<InsightIncomeTagData, ThrowOnError>) {
+    public static insightIncomeTag<ThrowOnError extends boolean = true>(options: Options<InsightIncomeTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeTagResponses, InsightIncomeTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/tag',
@@ -697,7 +697,7 @@ export class InsightService {
      * This endpoint gives a summary of the income received by the user, including only income with no tag.
      *
      */
-    public static insightIncomeNoTag<ThrowOnError extends boolean = false>(options: Options<InsightIncomeNoTagData, ThrowOnError>) {
+    public static insightIncomeNoTag<ThrowOnError extends boolean = true>(options: Options<InsightIncomeNoTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeNoTagResponses, InsightIncomeNoTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/no-tag',
@@ -711,7 +711,7 @@ export class InsightService {
      * This endpoint gives a summary of the transfers created by the user, grouped by (any) tag.
      *
      */
-    public static insightTransferTag<ThrowOnError extends boolean = false>(options: Options<InsightTransferTagData, ThrowOnError>) {
+    public static insightTransferTag<ThrowOnError extends boolean = true>(options: Options<InsightTransferTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransferTagResponses, InsightTransferTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/tag',
@@ -725,7 +725,7 @@ export class InsightService {
      * This endpoint gives a summary of the transfers made by the user, including only transfers with no tag.
      *
      */
-    public static insightTransferNoTag<ThrowOnError extends boolean = false>(options: Options<InsightTransferNoTagData, ThrowOnError>) {
+    public static insightTransferNoTag<ThrowOnError extends boolean = true>(options: Options<InsightTransferNoTagData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransferNoTagResponses, InsightTransferNoTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/no-tag',
@@ -739,7 +739,7 @@ export class InsightService {
      * This endpoint gives a sum of the total expenses made by the user.
      *
      */
-    public static insightExpenseTotal<ThrowOnError extends boolean = false>(options: Options<InsightExpenseTotalData, ThrowOnError>) {
+    public static insightExpenseTotal<ThrowOnError extends boolean = true>(options: Options<InsightExpenseTotalData, ThrowOnError>) {
         return (options.client ?? client).get<InsightExpenseTotalResponses, InsightExpenseTotalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/expense/total',
@@ -753,7 +753,7 @@ export class InsightService {
      * This endpoint gives a sum of the total income received by the user.
      *
      */
-    public static insightIncomeTotal<ThrowOnError extends boolean = false>(options: Options<InsightIncomeTotalData, ThrowOnError>) {
+    public static insightIncomeTotal<ThrowOnError extends boolean = true>(options: Options<InsightIncomeTotalData, ThrowOnError>) {
         return (options.client ?? client).get<InsightIncomeTotalResponses, InsightIncomeTotalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/income/total',
@@ -767,7 +767,7 @@ export class InsightService {
      * This endpoint gives a sum of the total amount transfers made by the user.
      *
      */
-    public static insightTransferTotal<ThrowOnError extends boolean = false>(options: Options<InsightTransferTotalData, ThrowOnError>) {
+    public static insightTransferTotal<ThrowOnError extends boolean = true>(options: Options<InsightTransferTotalData, ThrowOnError>) {
         return (options.client ?? client).get<InsightTransferTotalResponses, InsightTransferTotalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/insight/transfer/total',
@@ -783,7 +783,7 @@ export class AccountsService {
      * This endpoint returns a list of all the transactions connected to the account.
      *
      */
-    public static listTransactionByAccount<ThrowOnError extends boolean = false>(options: Options<ListTransactionByAccountData, ThrowOnError>) {
+    public static listTransactionByAccount<ThrowOnError extends boolean = true>(options: Options<ListTransactionByAccountData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByAccountResponses, ListTransactionByAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}/transactions',
@@ -796,7 +796,7 @@ export class AccountsService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByAccount<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByAccountData, ThrowOnError>) {
+    public static listAttachmentByAccount<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByAccountData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByAccountResponses, ListAttachmentByAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}/attachments',
@@ -810,7 +810,7 @@ export class AccountsService {
      * This endpoint returns a list of all the piggy banks connected to the account.
      *
      */
-    public static listPiggyBankByAccount<ThrowOnError extends boolean = false>(options: Options<ListPiggyBankByAccountData, ThrowOnError>) {
+    public static listPiggyBankByAccount<ThrowOnError extends boolean = true>(options: Options<ListPiggyBankByAccountData, ThrowOnError>) {
         return (options.client ?? client).get<ListPiggyBankByAccountResponses, ListPiggyBankByAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}/piggy-banks',
@@ -824,7 +824,7 @@ export class AccountsService {
      * This endpoint returns a list of all the accounts owned by the authenticated user.
      *
      */
-    public static listAccount<ThrowOnError extends boolean = false>(options?: Options<ListAccountData, ThrowOnError>) {
+    public static listAccount<ThrowOnError extends boolean = true>(options?: Options<ListAccountData, ThrowOnError>) {
         return (options?.client ?? client).get<ListAccountResponses, ListAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts',
@@ -837,7 +837,7 @@ export class AccountsService {
      *
      * Creates a new account. The data required can be submitted as a JSON body or as a list of parameters (in key=value pairs, like a webform).
      */
-    public static storeAccount<ThrowOnError extends boolean = false>(options: Options<StoreAccountData, ThrowOnError>) {
+    public static storeAccount<ThrowOnError extends boolean = true>(options: Options<StoreAccountData, ThrowOnError>) {
         return (options.client ?? client).post<StoreAccountResponses, StoreAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts',
@@ -855,7 +855,7 @@ export class AccountsService {
      * Will permanently delete an account. Any associated transactions and piggy banks are ALSO deleted. Cannot be recovered from.
      *
      */
-    public static deleteAccount<ThrowOnError extends boolean = false>(options: Options<DeleteAccountData, ThrowOnError>) {
+    public static deleteAccount<ThrowOnError extends boolean = true>(options: Options<DeleteAccountData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteAccountResponses, DeleteAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}',
@@ -869,7 +869,7 @@ export class AccountsService {
      * Returns a single account by its ID.
      *
      */
-    public static getAccount<ThrowOnError extends boolean = false>(options: Options<GetAccountData, ThrowOnError>) {
+    public static getAccount<ThrowOnError extends boolean = true>(options: Options<GetAccountData, ThrowOnError>) {
         return (options.client ?? client).get<GetAccountResponses, GetAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}',
@@ -883,7 +883,7 @@ export class AccountsService {
      * Used to update a single account. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory.
      *
      */
-    public static updateAccount<ThrowOnError extends boolean = false>(options: Options<UpdateAccountData, ThrowOnError>) {
+    public static updateAccount<ThrowOnError extends boolean = true>(options: Options<UpdateAccountData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateAccountResponses, UpdateAccountErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/accounts/{id}',
@@ -903,7 +903,7 @@ export class AttachmentsService {
      * This endpoint lists all attachments.
      *
      */
-    public static listAttachment<ThrowOnError extends boolean = false>(options?: Options<ListAttachmentData, ThrowOnError>) {
+    public static listAttachment<ThrowOnError extends boolean = true>(options?: Options<ListAttachmentData, ThrowOnError>) {
         return (options?.client ?? client).get<ListAttachmentResponses, ListAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments',
@@ -917,7 +917,7 @@ export class AttachmentsService {
      * Creates a new attachment. The data required can be submitted as a JSON body or as a list of parameters. You cannot use this endpoint to upload the actual file data (see below). This endpoint only creates the attachment object.
      *
      */
-    public static storeAttachment<ThrowOnError extends boolean = false>(options: Options<StoreAttachmentData, ThrowOnError>) {
+    public static storeAttachment<ThrowOnError extends boolean = true>(options: Options<StoreAttachmentData, ThrowOnError>) {
         return (options.client ?? client).post<StoreAttachmentResponses, StoreAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments',
@@ -935,7 +935,7 @@ export class AttachmentsService {
      * With this endpoint you delete an attachment, including any stored file data.
      *
      */
-    public static deleteAttachment<ThrowOnError extends boolean = false>(options: Options<DeleteAttachmentData, ThrowOnError>) {
+    public static deleteAttachment<ThrowOnError extends boolean = true>(options: Options<DeleteAttachmentData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteAttachmentResponses, DeleteAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments/{id}',
@@ -949,7 +949,7 @@ export class AttachmentsService {
      * Get a single attachment. This endpoint only returns the available metadata for the attachment. Actual file data is handled in two other endpoints (see below).
      *
      */
-    public static getAttachment<ThrowOnError extends boolean = false>(options: Options<GetAttachmentData, ThrowOnError>) {
+    public static getAttachment<ThrowOnError extends boolean = true>(options: Options<GetAttachmentData, ThrowOnError>) {
         return (options.client ?? client).get<GetAttachmentResponses, GetAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments/{id}',
@@ -963,7 +963,7 @@ export class AttachmentsService {
      * Update the meta data for an existing attachment. This endpoint does not allow you to upload or download data. For that, see below.
      *
      */
-    public static updateAttachment<ThrowOnError extends boolean = false>(options: Options<UpdateAttachmentData, ThrowOnError>) {
+    public static updateAttachment<ThrowOnError extends boolean = true>(options: Options<UpdateAttachmentData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateAttachmentResponses, UpdateAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments/{id}',
@@ -981,7 +981,7 @@ export class AttachmentsService {
      * This endpoint allows you to download the binary content of a transaction. It will be sent to you as a download, using the content type "application/octet-stream" and content disposition "attachment; filename=example.pdf".
      *
      */
-    public static downloadAttachment<ThrowOnError extends boolean = false>(options: Options<DownloadAttachmentData, ThrowOnError>) {
+    public static downloadAttachment<ThrowOnError extends boolean = true>(options: Options<DownloadAttachmentData, ThrowOnError>) {
         return (options.client ?? client).get<DownloadAttachmentResponses, DownloadAttachmentErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/attachments/{id}/download',
@@ -995,7 +995,7 @@ export class AttachmentsService {
      * Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data.
      *
      */
-    public static uploadAttachment<ThrowOnError extends boolean = false>(options: Options<UploadAttachmentData, ThrowOnError>) {
+    public static uploadAttachment<ThrowOnError extends boolean = true>(options: Options<UploadAttachmentData, ThrowOnError>) {
         return (options.client ?? client).post<UploadAttachmentResponses, UploadAttachmentErrors, ThrowOnError>({
             bodySerializer: null,
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
@@ -1016,7 +1016,7 @@ export class AvailableBudgetsService {
      * Firefly III calculates the total amount of money budgeted in so-called "available budgets". This endpoint returns all of these amounts and the periods for which they are calculated.
      *
      */
-    public static listAvailableBudgets<ThrowOnError extends boolean = false>(options?: Options<ListAvailableBudgetsData, ThrowOnError>) {
+    public static listAvailableBudgets<ThrowOnError extends boolean = true>(options?: Options<ListAvailableBudgetsData, ThrowOnError>) {
         return (options?.client ?? client).get<ListAvailableBudgetsResponses, ListAvailableBudgetsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/available-budgets',
@@ -1029,7 +1029,7 @@ export class AvailableBudgetsService {
      *
      * Get a single available budget, by ID.
      */
-    public static getAvailableBudget<ThrowOnError extends boolean = false>(options: Options<GetAvailableBudgetData, ThrowOnError>) {
+    public static getAvailableBudget<ThrowOnError extends boolean = true>(options: Options<GetAvailableBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<GetAvailableBudgetResponses, GetAvailableBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/available-budgets/{id}',
@@ -1044,7 +1044,7 @@ export class BillsService {
      *
      * This endpoint will list all attachments linked to the bill.
      */
-    public static listAttachmentByBill<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByBillData, ThrowOnError>) {
+    public static listAttachmentByBill<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByBillData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByBillResponses, ListAttachmentByBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}/attachments',
@@ -1057,7 +1057,7 @@ export class BillsService {
      *
      * This endpoint will list all rules that have an action to set the bill to this bill.
      */
-    public static listRuleByBill<ThrowOnError extends boolean = false>(options: Options<ListRuleByBillData, ThrowOnError>) {
+    public static listRuleByBill<ThrowOnError extends boolean = true>(options: Options<ListRuleByBillData, ThrowOnError>) {
         return (options.client ?? client).get<ListRuleByBillResponses, ListRuleByBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}/rules',
@@ -1070,7 +1070,7 @@ export class BillsService {
      *
      * This endpoint will list all transactions linked to this bill.
      */
-    public static listTransactionByBill<ThrowOnError extends boolean = false>(options: Options<ListTransactionByBillData, ThrowOnError>) {
+    public static listTransactionByBill<ThrowOnError extends boolean = true>(options: Options<ListTransactionByBillData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByBillResponses, ListTransactionByBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}/transactions',
@@ -1083,7 +1083,7 @@ export class BillsService {
      *
      * This endpoint will list all the user's bills.
      */
-    public static listBill<ThrowOnError extends boolean = false>(options?: Options<ListBillData, ThrowOnError>) {
+    public static listBill<ThrowOnError extends boolean = true>(options?: Options<ListBillData, ThrowOnError>) {
         return (options?.client ?? client).get<ListBillResponses, ListBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills',
@@ -1096,7 +1096,7 @@ export class BillsService {
      *
      * Creates a new bill. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeBill<ThrowOnError extends boolean = false>(options: Options<StoreBillData, ThrowOnError>) {
+    public static storeBill<ThrowOnError extends boolean = true>(options: Options<StoreBillData, ThrowOnError>) {
         return (options.client ?? client).post<StoreBillResponses, StoreBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills',
@@ -1113,7 +1113,7 @@ export class BillsService {
      *
      * Delete a bill. This will not delete any associated rules. Will not remove associated transactions. WILL remove all associated attachments.
      */
-    public static deleteBill<ThrowOnError extends boolean = false>(options: Options<DeleteBillData, ThrowOnError>) {
+    public static deleteBill<ThrowOnError extends boolean = true>(options: Options<DeleteBillData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteBillResponses, DeleteBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}',
@@ -1126,7 +1126,7 @@ export class BillsService {
      *
      * Get a single bill.
      */
-    public static getBill<ThrowOnError extends boolean = false>(options: Options<GetBillData, ThrowOnError>) {
+    public static getBill<ThrowOnError extends boolean = true>(options: Options<GetBillData, ThrowOnError>) {
         return (options.client ?? client).get<GetBillResponses, GetBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}',
@@ -1139,7 +1139,7 @@ export class BillsService {
      *
      * Update existing bill.
      */
-    public static updateBill<ThrowOnError extends boolean = false>(options: Options<UpdateBillData, ThrowOnError>) {
+    public static updateBill<ThrowOnError extends boolean = true>(options: Options<UpdateBillData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateBillResponses, UpdateBillErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/bills/{id}',
@@ -1158,7 +1158,7 @@ export class BudgetsService {
      *
      * List all the transactions within one budget limit. The start and end date are dictated by the budget limit.
      */
-    public static listTransactionByBudgetLimit<ThrowOnError extends boolean = false>(options: Options<ListTransactionByBudgetLimitData, ThrowOnError>) {
+    public static listTransactionByBudgetLimit<ThrowOnError extends boolean = true>(options: Options<ListTransactionByBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByBudgetLimitResponses, ListTransactionByBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits/{limitId}/transactions',
@@ -1172,7 +1172,7 @@ export class BudgetsService {
      * Get all budget limits for this budget and the money spent, and money left. You can limit the list by submitting a date range as well. The "spent" array for each budget limit is NOT influenced by the start and end date of your query, but by the start and end date of the budget limit itself.
      *
      */
-    public static listBudgetLimitByBudget<ThrowOnError extends boolean = false>(options: Options<ListBudgetLimitByBudgetData, ThrowOnError>) {
+    public static listBudgetLimitByBudget<ThrowOnError extends boolean = true>(options: Options<ListBudgetLimitByBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<ListBudgetLimitByBudgetResponses, ListBudgetLimitByBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits',
@@ -1185,7 +1185,7 @@ export class BudgetsService {
      *
      * Store a new budget limit under this budget.
      */
-    public static storeBudgetLimit<ThrowOnError extends boolean = false>(options: Options<StoreBudgetLimitData, ThrowOnError>) {
+    public static storeBudgetLimit<ThrowOnError extends boolean = true>(options: Options<StoreBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).post<StoreBudgetLimitResponses, StoreBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits',
@@ -1202,7 +1202,7 @@ export class BudgetsService {
      *
      * Delete a budget limit.
      */
-    public static deleteBudgetLimit<ThrowOnError extends boolean = false>(options: Options<DeleteBudgetLimitData, ThrowOnError>) {
+    public static deleteBudgetLimit<ThrowOnError extends boolean = true>(options: Options<DeleteBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteBudgetLimitResponses, DeleteBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits/{limitId}',
@@ -1213,7 +1213,7 @@ export class BudgetsService {
     /**
      * Get single budget limit.
      */
-    public static getBudgetLimit<ThrowOnError extends boolean = false>(options: Options<GetBudgetLimitData, ThrowOnError>) {
+    public static getBudgetLimit<ThrowOnError extends boolean = true>(options: Options<GetBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).get<GetBudgetLimitResponses, GetBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits/{limitId}',
@@ -1226,7 +1226,7 @@ export class BudgetsService {
      *
      * Update existing budget limit.
      */
-    public static updateBudgetLimit<ThrowOnError extends boolean = false>(options: Options<UpdateBudgetLimitData, ThrowOnError>) {
+    public static updateBudgetLimit<ThrowOnError extends boolean = true>(options: Options<UpdateBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateBudgetLimitResponses, UpdateBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/limits/{limitId}',
@@ -1244,7 +1244,7 @@ export class BudgetsService {
      * Get all budget limits for for this date range.
      *
      */
-    public static listBudgetLimit<ThrowOnError extends boolean = false>(options: Options<ListBudgetLimitData, ThrowOnError>) {
+    public static listBudgetLimit<ThrowOnError extends boolean = true>(options: Options<ListBudgetLimitData, ThrowOnError>) {
         return (options.client ?? client).get<ListBudgetLimitResponses, ListBudgetLimitErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budget-limits',
@@ -1257,7 +1257,7 @@ export class BudgetsService {
      *
      * Get all transactions linked to a budget, possibly limited by start and end
      */
-    public static listTransactionByBudget<ThrowOnError extends boolean = false>(options: Options<ListTransactionByBudgetData, ThrowOnError>) {
+    public static listTransactionByBudget<ThrowOnError extends boolean = true>(options: Options<ListTransactionByBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByBudgetResponses, ListTransactionByBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/transactions',
@@ -1270,7 +1270,7 @@ export class BudgetsService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByBudget<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByBudgetData, ThrowOnError>) {
+    public static listAttachmentByBudget<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByBudgetResponses, ListAttachmentByBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}/attachments',
@@ -1283,7 +1283,7 @@ export class BudgetsService {
      *
      * Get all transactions NOT linked to a budget, possibly limited by start and end
      */
-    public static listTransactionWithoutBudget<ThrowOnError extends boolean = false>(options?: Options<ListTransactionWithoutBudgetData, ThrowOnError>) {
+    public static listTransactionWithoutBudget<ThrowOnError extends boolean = true>(options?: Options<ListTransactionWithoutBudgetData, ThrowOnError>) {
         return (options?.client ?? client).get<ListTransactionWithoutBudgetResponses, ListTransactionWithoutBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/transactions-without-budget',
@@ -1296,7 +1296,7 @@ export class BudgetsService {
      *
      * List all the budgets the user has made. If the start date and end date are submitted as well, the "spent" array will be updated accordingly.
      */
-    public static listBudget<ThrowOnError extends boolean = false>(options?: Options<ListBudgetData, ThrowOnError>) {
+    public static listBudget<ThrowOnError extends boolean = true>(options?: Options<ListBudgetData, ThrowOnError>) {
         return (options?.client ?? client).get<ListBudgetResponses, ListBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets',
@@ -1309,7 +1309,7 @@ export class BudgetsService {
      *
      * Creates a new budget. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeBudget<ThrowOnError extends boolean = false>(options: Options<StoreBudgetData, ThrowOnError>) {
+    public static storeBudget<ThrowOnError extends boolean = true>(options: Options<StoreBudgetData, ThrowOnError>) {
         return (options.client ?? client).post<StoreBudgetResponses, StoreBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets',
@@ -1326,7 +1326,7 @@ export class BudgetsService {
      *
      * Delete a budget. Transactions will not be deleted.
      */
-    public static deleteBudget<ThrowOnError extends boolean = false>(options: Options<DeleteBudgetData, ThrowOnError>) {
+    public static deleteBudget<ThrowOnError extends boolean = true>(options: Options<DeleteBudgetData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteBudgetResponses, DeleteBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}',
@@ -1339,7 +1339,7 @@ export class BudgetsService {
      *
      * Get a single budget. If the start date and end date are submitted as well, the "spent" array will be updated accordingly.
      */
-    public static getBudget<ThrowOnError extends boolean = false>(options: Options<GetBudgetData, ThrowOnError>) {
+    public static getBudget<ThrowOnError extends boolean = true>(options: Options<GetBudgetData, ThrowOnError>) {
         return (options.client ?? client).get<GetBudgetResponses, GetBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}',
@@ -1352,7 +1352,7 @@ export class BudgetsService {
      *
      * Update existing budget. This endpoint cannot be used to set budget amount limits.
      */
-    public static updateBudget<ThrowOnError extends boolean = false>(options: Options<UpdateBudgetData, ThrowOnError>) {
+    public static updateBudget<ThrowOnError extends boolean = true>(options: Options<UpdateBudgetData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateBudgetResponses, UpdateBudgetErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/budgets/{id}',
@@ -1371,7 +1371,7 @@ export class CategoriesService {
      *
      * List all transactions in a category, optionally limited to the date ranges specified.
      */
-    public static listTransactionByCategory<ThrowOnError extends boolean = false>(options: Options<ListTransactionByCategoryData, ThrowOnError>) {
+    public static listTransactionByCategory<ThrowOnError extends boolean = true>(options: Options<ListTransactionByCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByCategoryResponses, ListTransactionByCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories/{id}/transactions',
@@ -1384,7 +1384,7 @@ export class CategoriesService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByCategory<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByCategoryData, ThrowOnError>) {
+    public static listAttachmentByCategory<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByCategoryResponses, ListAttachmentByCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories/{id}/attachments',
@@ -1397,7 +1397,7 @@ export class CategoriesService {
      *
      * List all categories.
      */
-    public static listCategory<ThrowOnError extends boolean = false>(options?: Options<ListCategoryData, ThrowOnError>) {
+    public static listCategory<ThrowOnError extends boolean = true>(options?: Options<ListCategoryData, ThrowOnError>) {
         return (options?.client ?? client).get<ListCategoryResponses, ListCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories',
@@ -1410,7 +1410,7 @@ export class CategoriesService {
      *
      * Creates a new category. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeCategory<ThrowOnError extends boolean = false>(options: Options<StoreCategoryData, ThrowOnError>) {
+    public static storeCategory<ThrowOnError extends boolean = true>(options: Options<StoreCategoryData, ThrowOnError>) {
         return (options.client ?? client).post<StoreCategoryResponses, StoreCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories',
@@ -1427,7 +1427,7 @@ export class CategoriesService {
      *
      * Delete a category. Transactions will not be removed.
      */
-    public static deleteCategory<ThrowOnError extends boolean = false>(options: Options<DeleteCategoryData, ThrowOnError>) {
+    public static deleteCategory<ThrowOnError extends boolean = true>(options: Options<DeleteCategoryData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteCategoryResponses, DeleteCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories/{id}',
@@ -1440,7 +1440,7 @@ export class CategoriesService {
      *
      * Get a single category.
      */
-    public static getCategory<ThrowOnError extends boolean = false>(options: Options<GetCategoryData, ThrowOnError>) {
+    public static getCategory<ThrowOnError extends boolean = true>(options: Options<GetCategoryData, ThrowOnError>) {
         return (options.client ?? client).get<GetCategoryResponses, GetCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories/{id}',
@@ -1453,7 +1453,7 @@ export class CategoriesService {
      *
      * Update existing category.
      */
-    public static updateCategory<ThrowOnError extends boolean = false>(options: Options<UpdateCategoryData, ThrowOnError>) {
+    public static updateCategory<ThrowOnError extends boolean = true>(options: Options<UpdateCategoryData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateCategoryResponses, UpdateCategoryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/categories/{id}',
@@ -1472,7 +1472,7 @@ export class CurrencyExchangeRatesService {
      *
      * List exchange rates that Firefly III knows.
      */
-    public static listCurrencyExchangeRates<ThrowOnError extends boolean = false>(options?: Options<ListCurrencyExchangeRatesData, ThrowOnError>) {
+    public static listCurrencyExchangeRates<ThrowOnError extends boolean = true>(options?: Options<ListCurrencyExchangeRatesData, ThrowOnError>) {
         return (options?.client ?? client).get<ListCurrencyExchangeRatesResponses, ListCurrencyExchangeRatesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates',
@@ -1485,7 +1485,7 @@ export class CurrencyExchangeRatesService {
      *
      * Stores a new exchange rate. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeCurrencyExchangeRate<ThrowOnError extends boolean = false>(options: Options<StoreCurrencyExchangeRateData, ThrowOnError>) {
+    public static storeCurrencyExchangeRate<ThrowOnError extends boolean = true>(options: Options<StoreCurrencyExchangeRateData, ThrowOnError>) {
         return (options.client ?? client).post<StoreCurrencyExchangeRateResponses, StoreCurrencyExchangeRateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates',
@@ -1502,7 +1502,7 @@ export class CurrencyExchangeRatesService {
      *
      * Delete a specific currency exchange rate by its internal ID.
      */
-    public static deleteSpecificCurrencyExchangeRate<ThrowOnError extends boolean = false>(options: Options<DeleteSpecificCurrencyExchangeRateData, ThrowOnError>) {
+    public static deleteSpecificCurrencyExchangeRate<ThrowOnError extends boolean = true>(options: Options<DeleteSpecificCurrencyExchangeRateData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteSpecificCurrencyExchangeRateResponses, DeleteSpecificCurrencyExchangeRateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{id}',
@@ -1515,7 +1515,7 @@ export class CurrencyExchangeRatesService {
      *
      * List a single specific exchange rate by its ID.
      */
-    public static listSpecificCurrencyExchangeRate<ThrowOnError extends boolean = false>(options: Options<ListSpecificCurrencyExchangeRateData, ThrowOnError>) {
+    public static listSpecificCurrencyExchangeRate<ThrowOnError extends boolean = true>(options: Options<ListSpecificCurrencyExchangeRateData, ThrowOnError>) {
         return (options.client ?? client).get<ListSpecificCurrencyExchangeRateResponses, ListSpecificCurrencyExchangeRateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{id}',
@@ -1529,7 +1529,7 @@ export class CurrencyExchangeRatesService {
      * Used to update a single currency exchange rate by its ID. Including the from/to currency is optional.
      *
      */
-    public static updateCurrencyExchangeRate<ThrowOnError extends boolean = false>(options: Options<UpdateCurrencyExchangeRateData, ThrowOnError>) {
+    public static updateCurrencyExchangeRate<ThrowOnError extends boolean = true>(options: Options<UpdateCurrencyExchangeRateData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateCurrencyExchangeRateResponses, UpdateCurrencyExchangeRateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{id}',
@@ -1546,7 +1546,7 @@ export class CurrencyExchangeRatesService {
      *
      * Deletes ALL currency exchange rates from 'from' to 'to'. It's important to know that the reverse exchange rates (from 'to' to 'from') will not be deleted and Firefly III will still be able to infer the correct exchange rate from the reverse one.
      */
-    public static deleteSpecificCurrencyExchangeRates<ThrowOnError extends boolean = false>(options: Options<DeleteSpecificCurrencyExchangeRatesData, ThrowOnError>) {
+    public static deleteSpecificCurrencyExchangeRates<ThrowOnError extends boolean = true>(options: Options<DeleteSpecificCurrencyExchangeRatesData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteSpecificCurrencyExchangeRatesResponses, DeleteSpecificCurrencyExchangeRatesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{from}/{to}',
@@ -1559,7 +1559,7 @@ export class CurrencyExchangeRatesService {
      *
      * List all exchange rates from/to the mentioned currencies.
      */
-    public static listSpecificCurrencyExchangeRates<ThrowOnError extends boolean = false>(options: Options<ListSpecificCurrencyExchangeRatesData, ThrowOnError>) {
+    public static listSpecificCurrencyExchangeRates<ThrowOnError extends boolean = true>(options: Options<ListSpecificCurrencyExchangeRatesData, ThrowOnError>) {
         return (options.client ?? client).get<ListSpecificCurrencyExchangeRatesResponses, ListSpecificCurrencyExchangeRatesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{from}/{to}',
@@ -1572,7 +1572,7 @@ export class CurrencyExchangeRatesService {
      *
      * Delete the currency exchange rate from 'from' to 'to' on the specified date.  It's important to know that the reverse exchange rate (from 'to' to 'from') will not be deleted and Firefly III will still be able to infer the correct exchange rate from the reverse one.
      */
-    public static deleteSpecificCurrencyExchangeRateOnDate<ThrowOnError extends boolean = false>(options: Options<DeleteSpecificCurrencyExchangeRateOnDateData, ThrowOnError>) {
+    public static deleteSpecificCurrencyExchangeRateOnDate<ThrowOnError extends boolean = true>(options: Options<DeleteSpecificCurrencyExchangeRateOnDateData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteSpecificCurrencyExchangeRateOnDateResponses, DeleteSpecificCurrencyExchangeRateOnDateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{from}/{to}/{date}',
@@ -1585,7 +1585,7 @@ export class CurrencyExchangeRatesService {
      *
      * List the exchange rate for the from and to-currency on the requested date.
      */
-    public static listSpecificCurrencyExchangeRateOnDate<ThrowOnError extends boolean = false>(options: Options<ListSpecificCurrencyExchangeRateOnDateData, ThrowOnError>) {
+    public static listSpecificCurrencyExchangeRateOnDate<ThrowOnError extends boolean = true>(options: Options<ListSpecificCurrencyExchangeRateOnDateData, ThrowOnError>) {
         return (options.client ?? client).get<ListSpecificCurrencyExchangeRateOnDateResponses, ListSpecificCurrencyExchangeRateOnDateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{from}/{to}/{date}',
@@ -1599,7 +1599,7 @@ export class CurrencyExchangeRatesService {
      * Used to update a single currency exchange rate by its currency codes and date
      *
      */
-    public static updateCurrencyExchangeRateByDate<ThrowOnError extends boolean = false>(options: Options<UpdateCurrencyExchangeRateByDateData, ThrowOnError>) {
+    public static updateCurrencyExchangeRateByDate<ThrowOnError extends boolean = true>(options: Options<UpdateCurrencyExchangeRateByDateData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateCurrencyExchangeRateByDateResponses, UpdateCurrencyExchangeRateByDateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/{from}/{to}/{date}',
@@ -1616,7 +1616,7 @@ export class CurrencyExchangeRatesService {
      *
      * Stores a new set of exchange rates. The date is fixed (in the URL parameter) and the data required can be submitted as a JSON body.
      */
-    public static storeCurrencyExchangeRatesByDate<ThrowOnError extends boolean = false>(options: Options<StoreCurrencyExchangeRatesByDateData, ThrowOnError>) {
+    public static storeCurrencyExchangeRatesByDate<ThrowOnError extends boolean = true>(options: Options<StoreCurrencyExchangeRatesByDateData, ThrowOnError>) {
         return (options.client ?? client).post<StoreCurrencyExchangeRatesByDateResponses, StoreCurrencyExchangeRatesByDateErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/by-date/{date}',
@@ -1633,7 +1633,7 @@ export class CurrencyExchangeRatesService {
      *
      * Stores a new set of exchange rates for this pair. The date is variable, and the data required can be submitted as a JSON body.
      */
-    public static storeCurrencyExchangeRatesByPair<ThrowOnError extends boolean = false>(options: Options<StoreCurrencyExchangeRatesByPairData, ThrowOnError>) {
+    public static storeCurrencyExchangeRatesByPair<ThrowOnError extends boolean = true>(options: Options<StoreCurrencyExchangeRatesByPairData, ThrowOnError>) {
         return (options.client ?? client).post<StoreCurrencyExchangeRatesByPairResponses, StoreCurrencyExchangeRatesByPairErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/exchange-rates/by-currencies/{from}/{to}',
@@ -1653,7 +1653,7 @@ export class LinksService {
      * List all transactions under this link type, both the inward and outward transactions.
      *
      */
-    public static listTransactionByLinkType<ThrowOnError extends boolean = false>(options: Options<ListTransactionByLinkTypeData, ThrowOnError>) {
+    public static listTransactionByLinkType<ThrowOnError extends boolean = true>(options: Options<ListTransactionByLinkTypeData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByLinkTypeResponses, ListTransactionByLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types/{id}/transactions',
@@ -1667,7 +1667,7 @@ export class LinksService {
      * List all the link types the system has. These include the default ones as well as any new ones.
      *
      */
-    public static listLinkType<ThrowOnError extends boolean = false>(options?: Options<ListLinkTypeData, ThrowOnError>) {
+    public static listLinkType<ThrowOnError extends boolean = true>(options?: Options<ListLinkTypeData, ThrowOnError>) {
         return (options?.client ?? client).get<ListLinkTypeResponses, ListLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types',
@@ -1680,7 +1680,7 @@ export class LinksService {
      *
      * Creates a new link type. The data required can be submitted as a JSON body or as a list of parameters (in key=value pairs, like a webform).
      */
-    public static storeLinkType<ThrowOnError extends boolean = false>(options: Options<StoreLinkTypeData, ThrowOnError>) {
+    public static storeLinkType<ThrowOnError extends boolean = true>(options: Options<StoreLinkTypeData, ThrowOnError>) {
         return (options.client ?? client).post<StoreLinkTypeResponses, StoreLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types',
@@ -1698,7 +1698,7 @@ export class LinksService {
      * Will permanently delete a link type. The links between transactions will be removed. The transactions themselves remain. You cannot delete some of the system provided link types, indicated by the editable=false flag when you list it.
      *
      */
-    public static deleteLinkType<ThrowOnError extends boolean = false>(options: Options<DeleteLinkTypeData, ThrowOnError>) {
+    public static deleteLinkType<ThrowOnError extends boolean = true>(options: Options<DeleteLinkTypeData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteLinkTypeResponses, DeleteLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types/{id}',
@@ -1712,7 +1712,7 @@ export class LinksService {
      * Returns a single link type by its ID.
      *
      */
-    public static getLinkType<ThrowOnError extends boolean = false>(options: Options<GetLinkTypeData, ThrowOnError>) {
+    public static getLinkType<ThrowOnError extends boolean = true>(options: Options<GetLinkTypeData, ThrowOnError>) {
         return (options.client ?? client).get<GetLinkTypeResponses, GetLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types/{id}',
@@ -1726,7 +1726,7 @@ export class LinksService {
      * Used to update a single link type. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory. You cannot update some of the system provided link types, indicated by the editable=false flag when you list it.
      *
      */
-    public static updateLinkType<ThrowOnError extends boolean = false>(options: Options<UpdateLinkTypeData, ThrowOnError>) {
+    public static updateLinkType<ThrowOnError extends boolean = true>(options: Options<UpdateLinkTypeData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateLinkTypeResponses, UpdateLinkTypeErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/link-types/{id}',
@@ -1744,7 +1744,7 @@ export class LinksService {
      * List all the transaction links.
      *
      */
-    public static listTransactionLink<ThrowOnError extends boolean = false>(options?: Options<ListTransactionLinkData, ThrowOnError>) {
+    public static listTransactionLink<ThrowOnError extends boolean = true>(options?: Options<ListTransactionLinkData, ThrowOnError>) {
         return (options?.client ?? client).get<ListTransactionLinkResponses, ListTransactionLinkErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-links',
@@ -1757,7 +1757,7 @@ export class LinksService {
      *
      * Store a new link between two transactions. For this end point you need the journal_id from a transaction.
      */
-    public static storeTransactionLink<ThrowOnError extends boolean = false>(options: Options<StoreTransactionLinkData, ThrowOnError>) {
+    public static storeTransactionLink<ThrowOnError extends boolean = true>(options: Options<StoreTransactionLinkData, ThrowOnError>) {
         return (options.client ?? client).post<StoreTransactionLinkResponses, StoreTransactionLinkErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-links',
@@ -1775,7 +1775,7 @@ export class LinksService {
      * Will permanently delete link. Transactions remain.
      *
      */
-    public static deleteTransactionLink<ThrowOnError extends boolean = false>(options: Options<DeleteTransactionLinkData, ThrowOnError>) {
+    public static deleteTransactionLink<ThrowOnError extends boolean = true>(options: Options<DeleteTransactionLinkData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteTransactionLinkResponses, DeleteTransactionLinkErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-links/{id}',
@@ -1789,7 +1789,7 @@ export class LinksService {
      * Returns a single link by its ID.
      *
      */
-    public static getTransactionLink<ThrowOnError extends boolean = false>(options: Options<GetTransactionLinkData, ThrowOnError>) {
+    public static getTransactionLink<ThrowOnError extends boolean = true>(options: Options<GetTransactionLinkData, ThrowOnError>) {
         return (options.client ?? client).get<GetTransactionLinkResponses, GetTransactionLinkErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-links/{id}',
@@ -1803,7 +1803,7 @@ export class LinksService {
      * Used to update a single existing link.
      *
      */
-    public static updateTransactionLink<ThrowOnError extends boolean = false>(options: Options<UpdateTransactionLinkData, ThrowOnError>) {
+    public static updateTransactionLink<ThrowOnError extends boolean = true>(options: Options<UpdateTransactionLinkData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateTransactionLinkResponses, UpdateTransactionLinkErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-links/{id}',
@@ -1823,7 +1823,7 @@ export class ObjectGroupsService {
      * This endpoint returns a list of all the piggy banks connected to the object group.
      *
      */
-    public static listPiggyBankByObjectGroup<ThrowOnError extends boolean = false>(options: Options<ListPiggyBankByObjectGroupData, ThrowOnError>) {
+    public static listPiggyBankByObjectGroup<ThrowOnError extends boolean = true>(options: Options<ListPiggyBankByObjectGroupData, ThrowOnError>) {
         return (options.client ?? client).get<ListPiggyBankByObjectGroupResponses, ListPiggyBankByObjectGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups/{id}/piggy-banks',
@@ -1836,7 +1836,7 @@ export class ObjectGroupsService {
      *
      * List all bills with this object group.
      */
-    public static listBillByObjectGroup<ThrowOnError extends boolean = false>(options: Options<ListBillByObjectGroupData, ThrowOnError>) {
+    public static listBillByObjectGroup<ThrowOnError extends boolean = true>(options: Options<ListBillByObjectGroupData, ThrowOnError>) {
         return (options.client ?? client).get<ListBillByObjectGroupResponses, ListBillByObjectGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups/{id}/bills',
@@ -1849,7 +1849,7 @@ export class ObjectGroupsService {
      *
      * List all object groups.
      */
-    public static listObjectGroups<ThrowOnError extends boolean = false>(options?: Options<ListObjectGroupsData, ThrowOnError>) {
+    public static listObjectGroups<ThrowOnError extends boolean = true>(options?: Options<ListObjectGroupsData, ThrowOnError>) {
         return (options?.client ?? client).get<ListObjectGroupsResponses, ListObjectGroupsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups',
@@ -1862,7 +1862,7 @@ export class ObjectGroupsService {
      *
      * Delete a object group.
      */
-    public static deleteObjectGroup<ThrowOnError extends boolean = false>(options: Options<DeleteObjectGroupData, ThrowOnError>) {
+    public static deleteObjectGroup<ThrowOnError extends boolean = true>(options: Options<DeleteObjectGroupData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteObjectGroupResponses, DeleteObjectGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups/{id}',
@@ -1875,7 +1875,7 @@ export class ObjectGroupsService {
      *
      * Get a single object group.
      */
-    public static getObjectGroup<ThrowOnError extends boolean = false>(options: Options<GetObjectGroupData, ThrowOnError>) {
+    public static getObjectGroup<ThrowOnError extends boolean = true>(options: Options<GetObjectGroupData, ThrowOnError>) {
         return (options.client ?? client).get<GetObjectGroupResponses, GetObjectGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups/{id}',
@@ -1888,7 +1888,7 @@ export class ObjectGroupsService {
      *
      * Update existing object group.
      */
-    public static updateObjectGroup<ThrowOnError extends boolean = false>(options: Options<UpdateObjectGroupData, ThrowOnError>) {
+    public static updateObjectGroup<ThrowOnError extends boolean = true>(options: Options<UpdateObjectGroupData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateObjectGroupResponses, UpdateObjectGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/object-groups/{id}',
@@ -1907,7 +1907,7 @@ export class PiggyBanksService {
      *
      * List all events linked to a piggy bank (adding and removing money).
      */
-    public static listEventByPiggyBank<ThrowOnError extends boolean = false>(options: Options<ListEventByPiggyBankData, ThrowOnError>) {
+    public static listEventByPiggyBank<ThrowOnError extends boolean = true>(options: Options<ListEventByPiggyBankData, ThrowOnError>) {
         return (options.client ?? client).get<ListEventByPiggyBankResponses, ListEventByPiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks/{id}/events',
@@ -1920,7 +1920,7 @@ export class PiggyBanksService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByPiggyBank<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByPiggyBankData, ThrowOnError>) {
+    public static listAttachmentByPiggyBank<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByPiggyBankData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByPiggyBankResponses, ListAttachmentByPiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks/{id}/attachments',
@@ -1933,7 +1933,7 @@ export class PiggyBanksService {
      *
      * List all piggy banks.
      */
-    public static listPiggyBank<ThrowOnError extends boolean = false>(options?: Options<ListPiggyBankData, ThrowOnError>) {
+    public static listPiggyBank<ThrowOnError extends boolean = true>(options?: Options<ListPiggyBankData, ThrowOnError>) {
         return (options?.client ?? client).get<ListPiggyBankResponses, ListPiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks',
@@ -1946,7 +1946,7 @@ export class PiggyBanksService {
      *
      * Creates a new piggy bank. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storePiggyBank<ThrowOnError extends boolean = false>(options: Options<StorePiggyBankData, ThrowOnError>) {
+    public static storePiggyBank<ThrowOnError extends boolean = true>(options: Options<StorePiggyBankData, ThrowOnError>) {
         return (options.client ?? client).post<StorePiggyBankResponses, StorePiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks',
@@ -1963,7 +1963,7 @@ export class PiggyBanksService {
      *
      * Delete a piggy bank.
      */
-    public static deletePiggyBank<ThrowOnError extends boolean = false>(options: Options<DeletePiggyBankData, ThrowOnError>) {
+    public static deletePiggyBank<ThrowOnError extends boolean = true>(options: Options<DeletePiggyBankData, ThrowOnError>) {
         return (options.client ?? client).delete<DeletePiggyBankResponses, DeletePiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks/{id}',
@@ -1976,7 +1976,7 @@ export class PiggyBanksService {
      *
      * Get a single piggy bank.
      */
-    public static getPiggyBank<ThrowOnError extends boolean = false>(options: Options<GetPiggyBankData, ThrowOnError>) {
+    public static getPiggyBank<ThrowOnError extends boolean = true>(options: Options<GetPiggyBankData, ThrowOnError>) {
         return (options.client ?? client).get<GetPiggyBankResponses, GetPiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks/{id}',
@@ -1989,7 +1989,7 @@ export class PiggyBanksService {
      *
      * Update existing piggy bank.
      */
-    public static updatePiggyBank<ThrowOnError extends boolean = false>(options: Options<UpdatePiggyBankData, ThrowOnError>) {
+    public static updatePiggyBank<ThrowOnError extends boolean = true>(options: Options<UpdatePiggyBankData, ThrowOnError>) {
         return (options.client ?? client).put<UpdatePiggyBankResponses, UpdatePiggyBankErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/piggy-banks/{id}',
@@ -2008,7 +2008,7 @@ export class RecurrencesService {
      *
      * List all transactions created by a recurring transaction, optionally limited to the date ranges specified.
      */
-    public static listTransactionByRecurrence<ThrowOnError extends boolean = false>(options: Options<ListTransactionByRecurrenceData, ThrowOnError>) {
+    public static listTransactionByRecurrence<ThrowOnError extends boolean = true>(options: Options<ListTransactionByRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByRecurrenceResponses, ListTransactionByRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences/{id}/transactions',
@@ -2021,7 +2021,7 @@ export class RecurrencesService {
      *
      * List all recurring transactions.
      */
-    public static listRecurrence<ThrowOnError extends boolean = false>(options?: Options<ListRecurrenceData, ThrowOnError>) {
+    public static listRecurrence<ThrowOnError extends boolean = true>(options?: Options<ListRecurrenceData, ThrowOnError>) {
         return (options?.client ?? client).get<ListRecurrenceResponses, ListRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences',
@@ -2034,7 +2034,7 @@ export class RecurrencesService {
      *
      * Creates a new recurring transaction. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeRecurrence<ThrowOnError extends boolean = false>(options: Options<StoreRecurrenceData, ThrowOnError>) {
+    public static storeRecurrence<ThrowOnError extends boolean = true>(options: Options<StoreRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).post<StoreRecurrenceResponses, StoreRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences',
@@ -2051,7 +2051,7 @@ export class RecurrencesService {
      *
      * Delete a recurring transaction. Transactions created by the recurring transaction will not be deleted.
      */
-    public static deleteRecurrence<ThrowOnError extends boolean = false>(options: Options<DeleteRecurrenceData, ThrowOnError>) {
+    public static deleteRecurrence<ThrowOnError extends boolean = true>(options: Options<DeleteRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteRecurrenceResponses, DeleteRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences/{id}',
@@ -2064,7 +2064,7 @@ export class RecurrencesService {
      *
      * Get a single recurring transaction.
      */
-    public static getRecurrence<ThrowOnError extends boolean = false>(options: Options<GetRecurrenceData, ThrowOnError>) {
+    public static getRecurrence<ThrowOnError extends boolean = true>(options: Options<GetRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).get<GetRecurrenceResponses, GetRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences/{id}',
@@ -2077,7 +2077,7 @@ export class RecurrencesService {
      *
      * Update existing recurring transaction.
      */
-    public static updateRecurrence<ThrowOnError extends boolean = false>(options: Options<UpdateRecurrenceData, ThrowOnError>) {
+    public static updateRecurrence<ThrowOnError extends boolean = true>(options: Options<UpdateRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateRecurrenceResponses, UpdateRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences/{id}',
@@ -2097,7 +2097,7 @@ export class RecurrencesService {
      * So, if you recurring transaction that occurs every Monday, you can trigger the creation of a transaction for Monday in two weeks, today. On that Monday two weeks from now, no transaction will be created. Instead, the transaction is created right now, and dated _today_.
      *
      */
-    public static triggerRecurrenceRecurrence<ThrowOnError extends boolean = false>(options: Options<TriggerRecurrenceRecurrenceData, ThrowOnError>) {
+    public static triggerRecurrenceRecurrence<ThrowOnError extends boolean = true>(options: Options<TriggerRecurrenceRecurrenceData, ThrowOnError>) {
         return (options.client ?? client).post<TriggerRecurrenceRecurrenceResponses, TriggerRecurrenceRecurrenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/recurrences/{id}/trigger',
@@ -2112,7 +2112,7 @@ export class RuleGroupsService {
      *
      * List rules in this rule group.
      */
-    public static listRuleByGroup<ThrowOnError extends boolean = false>(options: Options<ListRuleByGroupData, ThrowOnError>) {
+    public static listRuleByGroup<ThrowOnError extends boolean = true>(options: Options<ListRuleByGroupData, ThrowOnError>) {
         return (options.client ?? client).get<ListRuleByGroupResponses, ListRuleByGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}/rules',
@@ -2125,7 +2125,7 @@ export class RuleGroupsService {
      *
      * Test which transactions would be hit by the rule group. No changes will be made. Limit the result if you want to.
      */
-    public static testRuleGroup<ThrowOnError extends boolean = false>(options: Options<TestRuleGroupData, ThrowOnError>) {
+    public static testRuleGroup<ThrowOnError extends boolean = true>(options: Options<TestRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).get<TestRuleGroupResponses, TestRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}/test',
@@ -2138,7 +2138,7 @@ export class RuleGroupsService {
      *
      * Fire the rule group on your transactions. Changes will be made by the rules in the rule group. Limit the result if you want to.
      */
-    public static fireRuleGroup<ThrowOnError extends boolean = false>(options: Options<FireRuleGroupData, ThrowOnError>) {
+    public static fireRuleGroup<ThrowOnError extends boolean = true>(options: Options<FireRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).post<FireRuleGroupResponses, FireRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}/trigger',
@@ -2151,7 +2151,7 @@ export class RuleGroupsService {
      *
      * List all rule groups.
      */
-    public static listRuleGroup<ThrowOnError extends boolean = false>(options?: Options<ListRuleGroupData, ThrowOnError>) {
+    public static listRuleGroup<ThrowOnError extends boolean = true>(options?: Options<ListRuleGroupData, ThrowOnError>) {
         return (options?.client ?? client).get<ListRuleGroupResponses, ListRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups',
@@ -2164,7 +2164,7 @@ export class RuleGroupsService {
      *
      * Creates a new rule group. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeRuleGroup<ThrowOnError extends boolean = false>(options: Options<StoreRuleGroupData, ThrowOnError>) {
+    public static storeRuleGroup<ThrowOnError extends boolean = true>(options: Options<StoreRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).post<StoreRuleGroupResponses, StoreRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups',
@@ -2181,7 +2181,7 @@ export class RuleGroupsService {
      *
      * Delete a rule group.
      */
-    public static deleteRuleGroup<ThrowOnError extends boolean = false>(options: Options<DeleteRuleGroupData, ThrowOnError>) {
+    public static deleteRuleGroup<ThrowOnError extends boolean = true>(options: Options<DeleteRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteRuleGroupResponses, DeleteRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}',
@@ -2194,7 +2194,7 @@ export class RuleGroupsService {
      *
      * Get a single rule group. This does not include the rules. For that, see below.
      */
-    public static getRuleGroup<ThrowOnError extends boolean = false>(options: Options<GetRuleGroupData, ThrowOnError>) {
+    public static getRuleGroup<ThrowOnError extends boolean = true>(options: Options<GetRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).get<GetRuleGroupResponses, GetRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}',
@@ -2207,7 +2207,7 @@ export class RuleGroupsService {
      *
      * Update existing rule group.
      */
-    public static updateRuleGroup<ThrowOnError extends boolean = false>(options: Options<UpdateRuleGroupData, ThrowOnError>) {
+    public static updateRuleGroup<ThrowOnError extends boolean = true>(options: Options<UpdateRuleGroupData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateRuleGroupResponses, UpdateRuleGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rule-groups/{id}',
@@ -2226,7 +2226,7 @@ export class RulesService {
      *
      * Test which transactions would be hit by the rule. No changes will be made. Limit the result if you want to.
      */
-    public static testRule<ThrowOnError extends boolean = false>(options: Options<TestRuleData, ThrowOnError>) {
+    public static testRule<ThrowOnError extends boolean = true>(options: Options<TestRuleData, ThrowOnError>) {
         return (options.client ?? client).get<TestRuleResponses, TestRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules/{id}/test',
@@ -2239,7 +2239,7 @@ export class RulesService {
      *
      * Fire the rule group on your transactions. Changes will be made by the rules in the group. Limit the result if you want to.
      */
-    public static fireRule<ThrowOnError extends boolean = false>(options: Options<FireRuleData, ThrowOnError>) {
+    public static fireRule<ThrowOnError extends boolean = true>(options: Options<FireRuleData, ThrowOnError>) {
         return (options.client ?? client).post<FireRuleResponses, FireRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules/{id}/trigger',
@@ -2252,7 +2252,7 @@ export class RulesService {
      *
      * List all rules.
      */
-    public static listRule<ThrowOnError extends boolean = false>(options?: Options<ListRuleData, ThrowOnError>) {
+    public static listRule<ThrowOnError extends boolean = true>(options?: Options<ListRuleData, ThrowOnError>) {
         return (options?.client ?? client).get<ListRuleResponses, ListRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules',
@@ -2265,7 +2265,7 @@ export class RulesService {
      *
      * Creates a new rule. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeRule<ThrowOnError extends boolean = false>(options: Options<StoreRuleData, ThrowOnError>) {
+    public static storeRule<ThrowOnError extends boolean = true>(options: Options<StoreRuleData, ThrowOnError>) {
         return (options.client ?? client).post<StoreRuleResponses, StoreRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules',
@@ -2282,7 +2282,7 @@ export class RulesService {
      *
      * Delete an rule.
      */
-    public static deleteRule<ThrowOnError extends boolean = false>(options: Options<DeleteRuleData, ThrowOnError>) {
+    public static deleteRule<ThrowOnError extends boolean = true>(options: Options<DeleteRuleData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteRuleResponses, DeleteRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules/{id}',
@@ -2295,7 +2295,7 @@ export class RulesService {
      *
      * Get a single rule.
      */
-    public static getRule<ThrowOnError extends boolean = false>(options: Options<GetRuleData, ThrowOnError>) {
+    public static getRule<ThrowOnError extends boolean = true>(options: Options<GetRuleData, ThrowOnError>) {
         return (options.client ?? client).get<GetRuleResponses, GetRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules/{id}',
@@ -2308,7 +2308,7 @@ export class RulesService {
      *
      * Update existing rule.
      */
-    public static updateRule<ThrowOnError extends boolean = false>(options: Options<UpdateRuleData, ThrowOnError>) {
+    public static updateRule<ThrowOnError extends boolean = true>(options: Options<UpdateRuleData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateRuleResponses, UpdateRuleErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/rules/{id}',
@@ -2327,7 +2327,7 @@ export class TagsService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByTag<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByTagData, ThrowOnError>) {
+    public static listAttachmentByTag<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByTagData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByTagResponses, ListAttachmentByTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags/{tag}/attachments',
@@ -2340,7 +2340,7 @@ export class TagsService {
      *
      * List all transactions with this tag.
      */
-    public static listTransactionByTag<ThrowOnError extends boolean = false>(options: Options<ListTransactionByTagData, ThrowOnError>) {
+    public static listTransactionByTag<ThrowOnError extends boolean = true>(options: Options<ListTransactionByTagData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByTagResponses, ListTransactionByTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags/{tag}/transactions',
@@ -2353,7 +2353,7 @@ export class TagsService {
      *
      * List all of the user's tags.
      */
-    public static listTag<ThrowOnError extends boolean = false>(options?: Options<ListTagData, ThrowOnError>) {
+    public static listTag<ThrowOnError extends boolean = true>(options?: Options<ListTagData, ThrowOnError>) {
         return (options?.client ?? client).get<ListTagResponses, ListTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags',
@@ -2366,7 +2366,7 @@ export class TagsService {
      *
      * Creates a new tag. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeTag<ThrowOnError extends boolean = false>(options: Options<StoreTagData, ThrowOnError>) {
+    public static storeTag<ThrowOnError extends boolean = true>(options: Options<StoreTagData, ThrowOnError>) {
         return (options.client ?? client).post<StoreTagResponses, StoreTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags',
@@ -2383,7 +2383,7 @@ export class TagsService {
      *
      * Delete an tag.
      */
-    public static deleteTag<ThrowOnError extends boolean = false>(options: Options<DeleteTagData, ThrowOnError>) {
+    public static deleteTag<ThrowOnError extends boolean = true>(options: Options<DeleteTagData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteTagResponses, DeleteTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags/{tag}',
@@ -2396,7 +2396,7 @@ export class TagsService {
      *
      * Get a single tag.
      */
-    public static getTag<ThrowOnError extends boolean = false>(options: Options<GetTagData, ThrowOnError>) {
+    public static getTag<ThrowOnError extends boolean = true>(options: Options<GetTagData, ThrowOnError>) {
         return (options.client ?? client).get<GetTagResponses, GetTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags/{tag}',
@@ -2409,7 +2409,7 @@ export class TagsService {
      *
      * Update existing tag.
      */
-    public static updateTag<ThrowOnError extends boolean = false>(options: Options<UpdateTagData, ThrowOnError>) {
+    public static updateTag<ThrowOnError extends boolean = true>(options: Options<UpdateTagData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateTagResponses, UpdateTagErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/tags/{tag}',
@@ -2428,7 +2428,7 @@ export class CurrenciesService {
      *
      * List all accounts with this currency.
      */
-    public static listAccountByCurrency<ThrowOnError extends boolean = false>(options: Options<ListAccountByCurrencyData, ThrowOnError>) {
+    public static listAccountByCurrency<ThrowOnError extends boolean = true>(options: Options<ListAccountByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListAccountByCurrencyResponses, ListAccountByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/accounts',
@@ -2441,7 +2441,7 @@ export class CurrenciesService {
      *
      * List all available budgets with this currency.
      */
-    public static listAvailableBudgetByCurrency<ThrowOnError extends boolean = false>(options: Options<ListAvailableBudgetByCurrencyData, ThrowOnError>) {
+    public static listAvailableBudgetByCurrency<ThrowOnError extends boolean = true>(options: Options<ListAvailableBudgetByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListAvailableBudgetByCurrencyResponses, ListAvailableBudgetByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/available-budgets',
@@ -2454,7 +2454,7 @@ export class CurrenciesService {
      *
      * List all bills with this currency.
      */
-    public static listBillByCurrency<ThrowOnError extends boolean = false>(options: Options<ListBillByCurrencyData, ThrowOnError>) {
+    public static listBillByCurrency<ThrowOnError extends boolean = true>(options: Options<ListBillByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListBillByCurrencyResponses, ListBillByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/bills',
@@ -2467,7 +2467,7 @@ export class CurrenciesService {
      *
      * List all budget limits with this currency
      */
-    public static listBudgetLimitByCurrency<ThrowOnError extends boolean = false>(options: Options<ListBudgetLimitByCurrencyData, ThrowOnError>) {
+    public static listBudgetLimitByCurrency<ThrowOnError extends boolean = true>(options: Options<ListBudgetLimitByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListBudgetLimitByCurrencyResponses, ListBudgetLimitByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/budget-limits',
@@ -2480,7 +2480,7 @@ export class CurrenciesService {
      *
      * List all recurring transactions with this currency.
      */
-    public static listRecurrenceByCurrency<ThrowOnError extends boolean = false>(options: Options<ListRecurrenceByCurrencyData, ThrowOnError>) {
+    public static listRecurrenceByCurrency<ThrowOnError extends boolean = true>(options: Options<ListRecurrenceByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListRecurrenceByCurrencyResponses, ListRecurrenceByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/recurrences',
@@ -2493,7 +2493,7 @@ export class CurrenciesService {
      *
      * List all rules with this currency.
      */
-    public static listRuleByCurrency<ThrowOnError extends boolean = false>(options: Options<ListRuleByCurrencyData, ThrowOnError>) {
+    public static listRuleByCurrency<ThrowOnError extends boolean = true>(options: Options<ListRuleByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListRuleByCurrencyResponses, ListRuleByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/rules',
@@ -2506,7 +2506,7 @@ export class CurrenciesService {
      *
      * List all transactions with this currency.
      */
-    public static listTransactionByCurrency<ThrowOnError extends boolean = false>(options: Options<ListTransactionByCurrencyData, ThrowOnError>) {
+    public static listTransactionByCurrency<ThrowOnError extends boolean = true>(options: Options<ListTransactionByCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<ListTransactionByCurrencyResponses, ListTransactionByCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/transactions',
@@ -2519,7 +2519,7 @@ export class CurrenciesService {
      *
      * List all currencies.
      */
-    public static listCurrency<ThrowOnError extends boolean = false>(options?: Options<ListCurrencyData, ThrowOnError>) {
+    public static listCurrency<ThrowOnError extends boolean = true>(options?: Options<ListCurrencyData, ThrowOnError>) {
         return (options?.client ?? client).get<ListCurrencyResponses, ListCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies',
@@ -2532,7 +2532,7 @@ export class CurrenciesService {
      *
      * Creates a new currency. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeCurrency<ThrowOnError extends boolean = false>(options: Options<StoreCurrencyData, ThrowOnError>) {
+    public static storeCurrency<ThrowOnError extends boolean = true>(options: Options<StoreCurrencyData, ThrowOnError>) {
         return (options.client ?? client).post<StoreCurrencyResponses, StoreCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies',
@@ -2549,7 +2549,7 @@ export class CurrenciesService {
      *
      * Enable a single currency.
      */
-    public static enableCurrency<ThrowOnError extends boolean = false>(options: Options<EnableCurrencyData, ThrowOnError>) {
+    public static enableCurrency<ThrowOnError extends boolean = true>(options: Options<EnableCurrencyData, ThrowOnError>) {
         return (options.client ?? client).post<EnableCurrencyResponses, EnableCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/enable',
@@ -2562,7 +2562,7 @@ export class CurrenciesService {
      *
      * Disable a currency.
      */
-    public static disableCurrency<ThrowOnError extends boolean = false>(options: Options<DisableCurrencyData, ThrowOnError>) {
+    public static disableCurrency<ThrowOnError extends boolean = true>(options: Options<DisableCurrencyData, ThrowOnError>) {
         return (options.client ?? client).post<DisableCurrencyResponses, DisableCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/disable',
@@ -2575,7 +2575,7 @@ export class CurrenciesService {
      *
      * Make this currency the primary currency for the current financial administration. If the currency is not enabled, it will be enabled as well.
      */
-    public static primaryCurrency<ThrowOnError extends boolean = false>(options: Options<PrimaryCurrencyData, ThrowOnError>) {
+    public static primaryCurrency<ThrowOnError extends boolean = true>(options: Options<PrimaryCurrencyData, ThrowOnError>) {
         return (options.client ?? client).post<PrimaryCurrencyResponses, PrimaryCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}/primary',
@@ -2588,7 +2588,7 @@ export class CurrenciesService {
      *
      * Delete a currency.
      */
-    public static deleteCurrency<ThrowOnError extends boolean = false>(options: Options<DeleteCurrencyData, ThrowOnError>) {
+    public static deleteCurrency<ThrowOnError extends boolean = true>(options: Options<DeleteCurrencyData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteCurrencyResponses, DeleteCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}',
@@ -2601,7 +2601,7 @@ export class CurrenciesService {
      *
      * Get a single currency.
      */
-    public static getCurrency<ThrowOnError extends boolean = false>(options: Options<GetCurrencyData, ThrowOnError>) {
+    public static getCurrency<ThrowOnError extends boolean = true>(options: Options<GetCurrencyData, ThrowOnError>) {
         return (options.client ?? client).get<GetCurrencyResponses, GetCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}',
@@ -2614,7 +2614,7 @@ export class CurrenciesService {
      *
      * Update existing currency.
      */
-    public static updateCurrency<ThrowOnError extends boolean = false>(options: Options<UpdateCurrencyData, ThrowOnError>) {
+    public static updateCurrency<ThrowOnError extends boolean = true>(options: Options<UpdateCurrencyData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateCurrencyResponses, UpdateCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/{code}',
@@ -2631,7 +2631,7 @@ export class CurrenciesService {
      *
      * Get the primary currency of the current administration. This replaces what was called "the user's default currency" although they are essentially the same.
      */
-    public static getPrimaryCurrency<ThrowOnError extends boolean = false>(options?: Options<GetPrimaryCurrencyData, ThrowOnError>) {
+    public static getPrimaryCurrency<ThrowOnError extends boolean = true>(options?: Options<GetPrimaryCurrencyData, ThrowOnError>) {
         return (options?.client ?? client).get<GetPrimaryCurrencyResponses, GetPrimaryCurrencyErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/currencies/primary',
@@ -2646,7 +2646,7 @@ export class TransactionsService {
      *
      * Lists all the transaction links for an individual journal (a split). Don't use the group ID, you need the actual underlying journal (the split).
      */
-    public static listLinksByJournal<ThrowOnError extends boolean = false>(options: Options<ListLinksByJournalData, ThrowOnError>) {
+    public static listLinksByJournal<ThrowOnError extends boolean = true>(options: Options<ListLinksByJournalData, ThrowOnError>) {
         return (options.client ?? client).get<ListLinksByJournalResponses, ListLinksByJournalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-journals/{id}/links',
@@ -2659,7 +2659,7 @@ export class TransactionsService {
      *
      * Delete an individual journal (split) from a transaction.
      */
-    public static deleteTransactionJournal<ThrowOnError extends boolean = false>(options: Options<DeleteTransactionJournalData, ThrowOnError>) {
+    public static deleteTransactionJournal<ThrowOnError extends boolean = true>(options: Options<DeleteTransactionJournalData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteTransactionJournalResponses, DeleteTransactionJournalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-journals/{id}',
@@ -2672,7 +2672,7 @@ export class TransactionsService {
      *
      * Get a single transaction by underlying journal (split).
      */
-    public static getTransactionByJournal<ThrowOnError extends boolean = false>(options: Options<GetTransactionByJournalData, ThrowOnError>) {
+    public static getTransactionByJournal<ThrowOnError extends boolean = true>(options: Options<GetTransactionByJournalData, ThrowOnError>) {
         return (options.client ?? client).get<GetTransactionByJournalResponses, GetTransactionByJournalErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transaction-journals/{id}',
@@ -2685,7 +2685,7 @@ export class TransactionsService {
      *
      * Lists all attachments.
      */
-    public static listAttachmentByTransaction<ThrowOnError extends boolean = false>(options: Options<ListAttachmentByTransactionData, ThrowOnError>) {
+    public static listAttachmentByTransaction<ThrowOnError extends boolean = true>(options: Options<ListAttachmentByTransactionData, ThrowOnError>) {
         return (options.client ?? client).get<ListAttachmentByTransactionResponses, ListAttachmentByTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions/{id}/attachments',
@@ -2698,7 +2698,7 @@ export class TransactionsService {
      *
      * Lists all piggy bank events.
      */
-    public static listEventByTransaction<ThrowOnError extends boolean = false>(options: Options<ListEventByTransactionData, ThrowOnError>) {
+    public static listEventByTransaction<ThrowOnError extends boolean = true>(options: Options<ListEventByTransactionData, ThrowOnError>) {
         return (options.client ?? client).get<ListEventByTransactionResponses, ListEventByTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions/{id}/piggy-bank-events',
@@ -2712,7 +2712,7 @@ export class TransactionsService {
      *
      * List all the user's transactions.
      */
-    public static listTransaction<ThrowOnError extends boolean = false>(options?: Options<ListTransactionData, ThrowOnError>) {
+    public static listTransaction<ThrowOnError extends boolean = true>(options?: Options<ListTransactionData, ThrowOnError>) {
         return (options?.client ?? client).get<ListTransactionResponses, ListTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions',
@@ -2725,7 +2725,7 @@ export class TransactionsService {
      *
      * Creates a new transaction. The data required can be submitted as a JSON body or as a list of parameters.
      */
-    public static storeTransaction<ThrowOnError extends boolean = false>(options: Options<StoreTransactionData, ThrowOnError>) {
+    public static storeTransaction<ThrowOnError extends boolean = true>(options: Options<StoreTransactionData, ThrowOnError>) {
         return (options.client ?? client).post<StoreTransactionResponses, StoreTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions',
@@ -2742,7 +2742,7 @@ export class TransactionsService {
      *
      * Delete a transaction.
      */
-    public static deleteTransaction<ThrowOnError extends boolean = false>(options: Options<DeleteTransactionData, ThrowOnError>) {
+    public static deleteTransaction<ThrowOnError extends boolean = true>(options: Options<DeleteTransactionData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteTransactionResponses, DeleteTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions/{id}',
@@ -2755,7 +2755,7 @@ export class TransactionsService {
      *
      * Get a single transaction.
      */
-    public static getTransaction<ThrowOnError extends boolean = false>(options: Options<GetTransactionData, ThrowOnError>) {
+    public static getTransaction<ThrowOnError extends boolean = true>(options: Options<GetTransactionData, ThrowOnError>) {
         return (options.client ?? client).get<GetTransactionResponses, GetTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions/{id}',
@@ -2768,7 +2768,7 @@ export class TransactionsService {
      *
      * Update an existing transaction.
      */
-    public static updateTransaction<ThrowOnError extends boolean = false>(options: Options<UpdateTransactionData, ThrowOnError>) {
+    public static updateTransaction<ThrowOnError extends boolean = true>(options: Options<UpdateTransactionData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateTransactionResponses, UpdateTransactionErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/transactions/{id}',
@@ -2788,7 +2788,7 @@ export class UserGroupsService {
      *
      * List all the user groups available to this user. These are essentially the 'financial administrations' that Firefly III supports.
      */
-    public static listUserGroups<ThrowOnError extends boolean = false>(options?: Options<ListUserGroupsData, ThrowOnError>) {
+    public static listUserGroups<ThrowOnError extends boolean = true>(options?: Options<ListUserGroupsData, ThrowOnError>) {
         return (options?.client ?? client).get<ListUserGroupsResponses, ListUserGroupsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/user-groups',
@@ -2802,7 +2802,7 @@ export class UserGroupsService {
      * Returns a single user group by its ID.
      *
      */
-    public static getUserGroup<ThrowOnError extends boolean = false>(options: Options<GetUserGroupData, ThrowOnError>) {
+    public static getUserGroup<ThrowOnError extends boolean = true>(options: Options<GetUserGroupData, ThrowOnError>) {
         return (options.client ?? client).get<GetUserGroupResponses, GetUserGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/user-groups/{id}',
@@ -2816,7 +2816,7 @@ export class UserGroupsService {
      * Used to update a single user group. The available fields are still limited.
      *
      */
-    public static updateUserGroup<ThrowOnError extends boolean = false>(options: Options<UpdateUserGroupData, ThrowOnError>) {
+    public static updateUserGroup<ThrowOnError extends boolean = true>(options: Options<UpdateUserGroupData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateUserGroupResponses, UpdateUserGroupErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/user-groups/{id}',
@@ -2835,7 +2835,7 @@ export class SearchService {
      *
      * Search for accounts
      */
-    public static searchAccounts<ThrowOnError extends boolean = false>(options: Options<SearchAccountsData, ThrowOnError>) {
+    public static searchAccounts<ThrowOnError extends boolean = true>(options: Options<SearchAccountsData, ThrowOnError>) {
         return (options.client ?? client).get<SearchAccountsResponses, SearchAccountsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/search/accounts',
@@ -2848,7 +2848,7 @@ export class SearchService {
      *
      * Searches through the users transactions.
      */
-    public static searchTransactions<ThrowOnError extends boolean = false>(options: Options<SearchTransactionsData, ThrowOnError>) {
+    public static searchTransactions<ThrowOnError extends boolean = true>(options: Options<SearchTransactionsData, ThrowOnError>) {
         return (options.client ?? client).get<SearchTransactionsResponses, SearchTransactionsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/search/transactions',
@@ -2864,7 +2864,7 @@ export class SummaryService {
      * Returns basic sums of the users data, like the net worth, spent and earned amounts. It is multi-currency, and is used in Firefly III to populate the dashboard.
      *
      */
-    public static getBasicSummary<ThrowOnError extends boolean = false>(options: Options<GetBasicSummaryData, ThrowOnError>) {
+    public static getBasicSummary<ThrowOnError extends boolean = true>(options: Options<GetBasicSummaryData, ThrowOnError>) {
         return (options.client ?? client).get<GetBasicSummaryResponses, GetBasicSummaryErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/summary/basic',
@@ -2880,7 +2880,7 @@ export class AboutService {
      * Returns general system information and versions of the (supporting) software.
      *
      */
-    public static getAbout<ThrowOnError extends boolean = false>(options?: Options<GetAboutData, ThrowOnError>) {
+    public static getAbout<ThrowOnError extends boolean = true>(options?: Options<GetAboutData, ThrowOnError>) {
         return (options?.client ?? client).get<GetAboutResponses, GetAboutErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/about',
@@ -2894,7 +2894,7 @@ export class AboutService {
      * Returns the currently authenticated user.
      *
      */
-    public static getCurrentUser<ThrowOnError extends boolean = false>(options?: Options<GetCurrentUserData, ThrowOnError>) {
+    public static getCurrentUser<ThrowOnError extends boolean = true>(options?: Options<GetCurrentUserData, ThrowOnError>) {
         return (options?.client ?? client).get<GetCurrentUserResponses, GetCurrentUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/about/user',
@@ -2908,7 +2908,7 @@ export class AboutService {
      * summary: Finish a batch of unprocessed transactions.
      *
      */
-    public static finishBatch<ThrowOnError extends boolean = false>(options?: Options<FinishBatchData, ThrowOnError>) {
+    public static finishBatch<ThrowOnError extends boolean = true>(options?: Options<FinishBatchData, ThrowOnError>) {
         return (options?.client ?? client).post<FinishBatchResponses, FinishBatchErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/batch/finish',
@@ -2924,7 +2924,7 @@ export class AboutService {
      * users.
      *
      */
-    public static getCron<ThrowOnError extends boolean = false>(options: Options<GetCronData, ThrowOnError>) {
+    public static getCron<ThrowOnError extends boolean = true>(options: Options<GetCronData, ThrowOnError>) {
         return (options.client ?? client).get<GetCronResponses, GetCronErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/cron/{cliToken}',
@@ -2939,7 +2939,7 @@ export class ConfigurationService {
      *
      * Returns all editable and not-editable configuration values for this Firefly III installation
      */
-    public static getConfiguration<ThrowOnError extends boolean = false>(options?: Options<GetConfigurationData, ThrowOnError>) {
+    public static getConfiguration<ThrowOnError extends boolean = true>(options?: Options<GetConfigurationData, ThrowOnError>) {
         return (options?.client ?? client).get<GetConfigurationResponses, GetConfigurationErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/configuration',
@@ -2952,7 +2952,7 @@ export class ConfigurationService {
      *
      * Returns one configuration variable for this Firefly III installation
      */
-    public static getSingleConfiguration<ThrowOnError extends boolean = false>(options: Options<GetSingleConfigurationData, ThrowOnError>) {
+    public static getSingleConfiguration<ThrowOnError extends boolean = true>(options: Options<GetSingleConfigurationData, ThrowOnError>) {
         return (options.client ?? client).get<GetSingleConfigurationResponses, GetSingleConfigurationErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/configuration/{name}',
@@ -2965,7 +2965,7 @@ export class ConfigurationService {
      *
      * Set a single configuration value. Not all configuration values can be updated so the list of accepted configuration variables is small.
      */
-    public static setConfiguration<ThrowOnError extends boolean = false>(options: Options<SetConfigurationData, ThrowOnError>) {
+    public static setConfiguration<ThrowOnError extends boolean = true>(options: Options<SetConfigurationData, ThrowOnError>) {
         return (options.client ?? client).put<SetConfigurationResponses, SetConfigurationErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/configuration/{name}',
@@ -2984,7 +2984,7 @@ export class UsersService {
      *
      * List all the users in this instance of Firefly III.
      */
-    public static listUser<ThrowOnError extends boolean = false>(options?: Options<ListUserData, ThrowOnError>) {
+    public static listUser<ThrowOnError extends boolean = true>(options?: Options<ListUserData, ThrowOnError>) {
         return (options?.client ?? client).get<ListUserResponses, ListUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/users',
@@ -2998,7 +2998,7 @@ export class UsersService {
      * Creates a new user. The data required can be submitted as a JSON body or as a list of parameters. The user will be given a random password, which they can reset using the "forgot password" function.
      *
      */
-    public static storeUser<ThrowOnError extends boolean = false>(options: Options<StoreUserData, ThrowOnError>) {
+    public static storeUser<ThrowOnError extends boolean = true>(options: Options<StoreUserData, ThrowOnError>) {
         return (options.client ?? client).post<StoreUserResponses, StoreUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/users',
@@ -3015,7 +3015,7 @@ export class UsersService {
      *
      * Delete a user. You cannot delete the user you're authenticated with. This cannot be undone. Be careful.
      */
-    public static deleteUser<ThrowOnError extends boolean = false>(options: Options<DeleteUserData, ThrowOnError>) {
+    public static deleteUser<ThrowOnError extends boolean = true>(options: Options<DeleteUserData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteUserResponses, DeleteUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/users/{id}',
@@ -3028,7 +3028,7 @@ export class UsersService {
      *
      * Gets all info of a single user.
      */
-    public static getUser<ThrowOnError extends boolean = false>(options: Options<GetUserData, ThrowOnError>) {
+    public static getUser<ThrowOnError extends boolean = true>(options: Options<GetUserData, ThrowOnError>) {
         return (options.client ?? client).get<GetUserResponses, GetUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/users/{id}',
@@ -3041,7 +3041,7 @@ export class UsersService {
      *
      * Update existing user.
      */
-    public static updateUser<ThrowOnError extends boolean = false>(options: Options<UpdateUserData, ThrowOnError>) {
+    public static updateUser<ThrowOnError extends boolean = true>(options: Options<UpdateUserData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateUserResponses, UpdateUserErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/users/{id}',
@@ -3060,7 +3060,7 @@ export class PreferencesService {
      *
      * List all of the preferences of the user.
      */
-    public static listPreference<ThrowOnError extends boolean = false>(options?: Options<ListPreferenceData, ThrowOnError>) {
+    public static listPreference<ThrowOnError extends boolean = true>(options?: Options<ListPreferenceData, ThrowOnError>) {
         return (options?.client ?? client).get<ListPreferenceResponses, ListPreferenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/preferences',
@@ -3073,7 +3073,7 @@ export class PreferencesService {
      *
      * This endpoint creates a new preference. The name and data are free-format, and entirely up to you. If the preference is not used in Firefly III itself it may not be configurable through the user interface, but you can use this endpoint to persist custom data for your own app.
      */
-    public static storePreference<ThrowOnError extends boolean = false>(options: Options<StorePreferenceData, ThrowOnError>) {
+    public static storePreference<ThrowOnError extends boolean = true>(options: Options<StorePreferenceData, ThrowOnError>) {
         return (options.client ?? client).post<StorePreferenceResponses, StorePreferenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/preferences',
@@ -3090,7 +3090,7 @@ export class PreferencesService {
      *
      * Return a single preference and the value.
      */
-    public static getPreference<ThrowOnError extends boolean = false>(options: Options<GetPreferenceData, ThrowOnError>) {
+    public static getPreference<ThrowOnError extends boolean = true>(options: Options<GetPreferenceData, ThrowOnError>) {
         return (options.client ?? client).get<GetPreferenceResponses, GetPreferenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/preferences/{name}',
@@ -3103,7 +3103,7 @@ export class PreferencesService {
      *
      * Update a user's preference.
      */
-    public static updatePreference<ThrowOnError extends boolean = false>(options: Options<UpdatePreferenceData, ThrowOnError>) {
+    public static updatePreference<ThrowOnError extends boolean = true>(options: Options<UpdatePreferenceData, ThrowOnError>) {
         return (options.client ?? client).put<UpdatePreferenceResponses, UpdatePreferenceErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/preferences/{name}',
@@ -3122,7 +3122,7 @@ export class WebhooksService {
      *
      * When a webhook is triggered the actual message that will be send is stored in a "message". You can view and analyse these messages.
      */
-    public static getWebhookMessages<ThrowOnError extends boolean = false>(options: Options<GetWebhookMessagesData, ThrowOnError>) {
+    public static getWebhookMessages<ThrowOnError extends boolean = true>(options: Options<GetWebhookMessagesData, ThrowOnError>) {
         return (options.client ?? client).get<GetWebhookMessagesResponses, GetWebhookMessagesErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages',
@@ -3135,7 +3135,7 @@ export class WebhooksService {
      *
      * Delete a webhook message. Any time a webhook is triggered the message is stored before it's sent. You can delete them before or after sending.
      */
-    public static deleteWebhookMessage<ThrowOnError extends boolean = false>(options: Options<DeleteWebhookMessageData, ThrowOnError>) {
+    public static deleteWebhookMessage<ThrowOnError extends boolean = true>(options: Options<DeleteWebhookMessageData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteWebhookMessageResponses, DeleteWebhookMessageErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages/{messageId}',
@@ -3148,7 +3148,7 @@ export class WebhooksService {
      *
      * When a webhook is triggered it will store the actual content of the webhook in a webhook message. You can view and analyse a single one using this endpoint.
      */
-    public static getSingleWebhookMessage<ThrowOnError extends boolean = false>(options: Options<GetSingleWebhookMessageData, ThrowOnError>) {
+    public static getSingleWebhookMessage<ThrowOnError extends boolean = true>(options: Options<GetSingleWebhookMessageData, ThrowOnError>) {
         return (options.client ?? client).get<GetSingleWebhookMessageResponses, GetSingleWebhookMessageErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages/{messageId}',
@@ -3161,7 +3161,7 @@ export class WebhooksService {
      *
      * When a webhook message fails to send it will store the failure in an "attempt". You can view and analyse these. Webhook messages that receive too many attempts (failures) will not be sent again. You must first clear out old attempts before the message can go out again.
      */
-    public static getWebhookMessageAttempts<ThrowOnError extends boolean = false>(options: Options<GetWebhookMessageAttemptsData, ThrowOnError>) {
+    public static getWebhookMessageAttempts<ThrowOnError extends boolean = true>(options: Options<GetWebhookMessageAttemptsData, ThrowOnError>) {
         return (options.client ?? client).get<GetWebhookMessageAttemptsResponses, GetWebhookMessageAttemptsErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages/{messageId}/attempts',
@@ -3174,7 +3174,7 @@ export class WebhooksService {
      *
      * Delete a webhook message attempt. If you delete all attempts for a webhook message, Firefly III will (once again) assume all is well with the webhook message and will try to send it again.
      */
-    public static deleteWebhookMessageAttempt<ThrowOnError extends boolean = false>(options: Options<DeleteWebhookMessageAttemptData, ThrowOnError>) {
+    public static deleteWebhookMessageAttempt<ThrowOnError extends boolean = true>(options: Options<DeleteWebhookMessageAttemptData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteWebhookMessageAttemptResponses, DeleteWebhookMessageAttemptErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages/{messageId}/attempts/{attemptId}',
@@ -3187,7 +3187,7 @@ export class WebhooksService {
      *
      * When a webhook message fails to send it will store the failure in an "attempt". You can view and analyse these. Webhooks messages that receive too many attempts (failures) will not be fired. You must first clear out old attempts and try again. This endpoint shows you the details of a single attempt. The ID of the attempt must match the corresponding webhook and webhook message.
      */
-    public static getSingleWebhookMessageAttempt<ThrowOnError extends boolean = false>(options: Options<GetSingleWebhookMessageAttemptData, ThrowOnError>) {
+    public static getSingleWebhookMessageAttempt<ThrowOnError extends boolean = true>(options: Options<GetSingleWebhookMessageAttemptData, ThrowOnError>) {
         return (options.client ?? client).get<GetSingleWebhookMessageAttemptResponses, GetSingleWebhookMessageAttemptErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/messages/{messageId}/attempts/{attemptId}',
@@ -3200,7 +3200,7 @@ export class WebhooksService {
      *
      * This endpoint will submit any open messages for this webhook. This is an asynchronous operation, so you can't see the result. Refresh the webhook message and/or the webhook message attempts to see the results. This may take some time if the webhook receiver is slow.
      */
-    public static submitWebhook<ThrowOnError extends boolean = false>(options: Options<SubmitWebhookData, ThrowOnError>) {
+    public static submitWebhook<ThrowOnError extends boolean = true>(options: Options<SubmitWebhookData, ThrowOnError>) {
         return (options.client ?? client).post<SubmitWebhookResponses, SubmitWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/submit',
@@ -3213,7 +3213,7 @@ export class WebhooksService {
      *
      * This endpoint will execute this webhook for a given transaction ID. This is an asynchronous operation, so you can't see the result. Refresh the webhook message and/or the webhook message attempts to see the results. This may take some time if the webhook receiver is slow.
      */
-    public static triggerTransactionWebhook<ThrowOnError extends boolean = false>(options: Options<TriggerTransactionWebhookData, ThrowOnError>) {
+    public static triggerTransactionWebhook<ThrowOnError extends boolean = true>(options: Options<TriggerTransactionWebhookData, ThrowOnError>) {
         return (options.client ?? client).post<TriggerTransactionWebhookResponses, TriggerTransactionWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}/trigger-transaction/{transactionId}',
@@ -3226,7 +3226,7 @@ export class WebhooksService {
      *
      * List all the user's webhooks.
      */
-    public static listWebhook<ThrowOnError extends boolean = false>(options?: Options<ListWebhookData, ThrowOnError>) {
+    public static listWebhook<ThrowOnError extends boolean = true>(options?: Options<ListWebhookData, ThrowOnError>) {
         return (options?.client ?? client).get<ListWebhookResponses, ListWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks',
@@ -3240,7 +3240,7 @@ export class WebhooksService {
      * Creates a new webhook. The data required can be submitted as a JSON body or as a list of parameters. The webhook will be given a random secret.
      *
      */
-    public static storeWebhook<ThrowOnError extends boolean = false>(options: Options<StoreWebhookData, ThrowOnError>) {
+    public static storeWebhook<ThrowOnError extends boolean = true>(options: Options<StoreWebhookData, ThrowOnError>) {
         return (options.client ?? client).post<StoreWebhookResponses, StoreWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks',
@@ -3257,7 +3257,7 @@ export class WebhooksService {
      *
      * Delete a webhook.
      */
-    public static deleteWebhook<ThrowOnError extends boolean = false>(options: Options<DeleteWebhookData, ThrowOnError>) {
+    public static deleteWebhook<ThrowOnError extends boolean = true>(options: Options<DeleteWebhookData, ThrowOnError>) {
         return (options.client ?? client).delete<DeleteWebhookResponses, DeleteWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}',
@@ -3270,7 +3270,7 @@ export class WebhooksService {
      *
      * Gets all info of a single webhook.
      */
-    public static getWebhook<ThrowOnError extends boolean = false>(options: Options<GetWebhookData, ThrowOnError>) {
+    public static getWebhook<ThrowOnError extends boolean = true>(options: Options<GetWebhookData, ThrowOnError>) {
         return (options.client ?? client).get<GetWebhookResponses, GetWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}',
@@ -3283,7 +3283,7 @@ export class WebhooksService {
      *
      * Update an existing webhook's information. If you wish to reset the secret, submit any value as the "secret". Firefly III will take this as a hint and reset the secret of the webhook.
      */
-    public static updateWebhook<ThrowOnError extends boolean = false>(options: Options<UpdateWebhookData, ThrowOnError>) {
+    public static updateWebhook<ThrowOnError extends boolean = true>(options: Options<UpdateWebhookData, ThrowOnError>) {
         return (options.client ?? client).put<UpdateWebhookResponses, UpdateWebhookErrors, ThrowOnError>({
             security: [{ scheme: 'bearer', type: 'http' }, { scheme: 'bearer', type: 'http' }],
             url: '/v1/webhooks/{id}',
