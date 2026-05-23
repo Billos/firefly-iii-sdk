@@ -23,3 +23,5 @@ jobs:
 
       - name: Publish
         run: npm publish --access public --tag latest
+        env:
+          NPM_CONFIG_PROVENANCE: true
