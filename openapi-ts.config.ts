@@ -12,6 +12,7 @@ export default defineConfig({
         containerName: "{{name}}Service",
         strategy: "byTags",
       },
+      responseStyle: "data",
     },
     {
       name: "@hey-api/client-fetch",
